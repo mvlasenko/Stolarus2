@@ -39,7 +39,7 @@ namespace Stolarus2.Api
         {
             container.RegisterType<IDbContextFactory, DbContextFactory>();
 
-            container.RegisterType<IProductsRepository, ProductsRepository>();
+            //container.RegisterType<IProductsRepository, ProductsRepository>();
 
             container.RegisterType<ICategoriesRepository, CategoriesRepository>();
 

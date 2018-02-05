@@ -34,9 +34,9 @@ namespace Stolarus2.Data.Models.Mapping
 
             // Relationships
 
-            this.HasOptional(t => t.Category)
-                .WithMany(t => t.Products)
-                .HasForeignKey(d => d.CategoryId);
+            //this.HasOptional(t => t.Category)
+            //    .WithMany(t => t.Products)
+            //    .HasForeignKey(d => d.CategoryId);
 
         }
     }
