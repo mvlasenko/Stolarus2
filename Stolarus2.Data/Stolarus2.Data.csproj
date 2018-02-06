@@ -77,18 +77,33 @@
     <Compile Include="Contracts\IPagedCollection.cs" />
     <Compile Include="Contracts\IPagedCollection`.cs" />
     <Compile Include="Contracts\ICategoriesRepository.cs" />
+    <Compile Include="Contracts\IProductsRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Filters\Filter.cs" />
     <Compile Include="Models\Mapping\CategoryMap.cs" />
+    <Compile Include="Models\Mapping\ProductMap.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Stolarus2Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Repository\CategoriesRepository.cs" />
     <Compile Include="Repository\DbContextFactory.cs" />
+    <Compile Include="Repository\ProductsRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

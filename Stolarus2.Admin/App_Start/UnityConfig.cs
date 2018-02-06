@@ -40,7 +40,7 @@ namespace Stolarus2.Admin
         {
             container.RegisterType<IDbContextFactory, DbContextFactory>();
 
-            //container.RegisterType<IProductsRepository, ProductsRepository>();
+            container.RegisterType<IProductsRepository, ProductsRepository>();
 
             container.RegisterType<ICategoriesRepository, CategoriesRepository>();
 

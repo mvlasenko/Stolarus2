@@ -1,0 +1,179 @@
+﻿@using Stolarus2.Data.Properties
+@using Stolarus2.Data.Contracts
+@using Stolarus2.Data.Models
+@model IPagedCollection
+
+@{
+    ViewBag.Title = Resources.Categories;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Resources.Categories</h2>
+
+<div style="padding-bottom: 10px;">
+    <button class="btn btn-primary create-item">@Resources.CreateNew</button>
+</div>
+
+<div>
+    <table class="table" id="grid">
+
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => ((Category)model).Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => ((Category)model).Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => ((Category)model).ImagePath)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Category item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagePath)
+                    </td>
+
+                    <td align="right">
+                        <button class="btn btn-primary edit-item" data-id="@item.Id">@Resources.Edit</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+@if (Model != null && Model.TotalCount > Model.PageSize)
+{
+    <div style="margin: 6px;">
+        @for (int i = 1; i <= (Model.TotalCount - 1) / Model.PageSize + 1; i++)
+        {
+            <button class="btn btn-primary page-item @(i == 1 ? "disabled" : "")" style="margin: 4px;" data-id="@i">@i</button>
+        }
+    </div>
+}
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+</div>
+
+<!-- loading spinner -->
+<div class="modal fade" id="loader" role="dialog" style="top: 300px; left: 300px;">
+    <div class="modal-dialog">
+        <div class="loader"></div>
+    </div>
+</div>
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        function InitModal() {
+            $('.edit-item').click(function() {
+                var url = "@Url.Content("~/")Categories/UpdatePartial";
+                var id = $(this).attr('data-id');
+                $.get(url + '/' + id, function(data) {
+                    $('#modal-content').html(data);
+
+                    $('#modal').modal('show');
+                    jQuery.validator.unobtrusive.parse('#frmModal');
+
+                    AddAsterisk();
+                });
+            });
+
+            $('.create-item').click(function() {
+                var url = "@Url.Content("~/")Categories/CreatePartial";
+                $.get(url, function(data) {
+                    $('#modal-content').html(data);
+
+                    $('#modal').modal('show');
+                    jQuery.validator.unobtrusive.parse('#frmModal');
+
+                    AddAsterisk();
+                });
+            });
+        }
+
+        function InitPager() {
+            $('.page-item').click(function () {
+                currentPageIndex = $(this).attr('data-id');
+
+                $('.page-item').removeClass("disabled");
+                $(this).addClass("disabled");
+
+                RefreshGrid(currentPageIndex);
+            });
+        }
+
+        function PageToFirst() {
+            $('.page-item').removeClass("disabled");
+            $('.page-item').first().addClass("disabled");
+        }
+
+        function RefreshGrid(pageIndex) {
+            $('#loader').modal('show');
+            var url = "@Url.Content("~/")Categories/GetList/" + pageIndex;
+            $.ajax({
+                type: 'GET',
+                dataType: 'Json',
+                url: url,
+                success: function(data) {
+
+                    $('table#grid TBODY').empty();
+                    $.each(data, function(idx, item) {
+                        $('table#grid TBODY').append("<tr><td>" + (item.Title || '') + "</td><td>" + (item.Description || '') + "</td><td>" + (item.ImagePath || '') + "</td><td align='right'><button class='btn btn-primary edit-item' data-id='" + item.Id + "'>@Resources.Edit</button></td></tr>");
+                    });
+
+                    $('#loader').modal('hide');
+
+                    InitModal();
+                },
+                processData: false,
+                async: true
+            });
+        }
+
+        function AddAsterisk() {
+            $('input[type=text]').each(function() {
+                var req = $(this).attr('data-val-required');
+                if (undefined != req) {
+                    var label = $('label[for="' + $(this).attr('id') + '"]');
+                    var text = label.text();
+                    if (text.length > 0 && text.indexOf('*') === -1) {
+                        label.append('<span style="color:red"> *</span>');
+                    }
+                }
+            });
+        }
+
+        var currentPageIndex = 1;
+
+        $(document).ready(function() {
+
+            InitModal();
+
+            InitPager();
+        });
+
+    </script>
+}
