@@ -48,7 +48,7 @@ namespace Stolarus2.Data.Repository
             {
                 entities = this.DbSet
                 .Where(filter.Where)
-                .Skip(filter.PageIndex - 1 * filter.PageSize)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
                 .Take(filter.PageSize)
                 .ToArray();
             }
@@ -57,7 +57,7 @@ namespace Stolarus2.Data.Repository
                 entities = this.DbSet
                 .OrderByDescending(filter.OrderByDescending)
                 .Where(filter.Where)
-                .Skip(filter.PageIndex - 1 * filter.PageSize)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
                 .Take(filter.PageSize)
                 .ToArray();
             }
@@ -66,7 +66,7 @@ namespace Stolarus2.Data.Repository
                 entities = this.DbSet
                 .OrderBy(filter.OrderBy)
                 .Where(filter.Where)
-                .Skip(filter.PageIndex - 1 * filter.PageSize)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
                 .Take(filter.PageSize)
                 .ToArray();
             }
@@ -74,6 +74,40 @@ namespace Stolarus2.Data.Repository
             int totalCount = this.DbSet.Count(filter.Where);
 
             return new PagedCollection<T>(entities, filter.PageIndex, filter.PageSize, totalCount);
+        }
+
+        public ICollection<T> GetPagedList(IFilter<T, TKey> filter)
+        {
+            T[] entities;
+
+            if (filter.OrderBy == null && filter.OrderByDescending == null)
+            {
+                entities = this.DbSet
+                .Where(filter.Where)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToArray();
+            }
+            else if (filter.OrderBy == null)
+            {
+                entities = this.DbSet
+                .OrderByDescending(filter.OrderByDescending)
+                .Where(filter.Where)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToArray();
+            }
+            else
+            {
+                entities = this.DbSet
+                .OrderBy(filter.OrderBy)
+                .Where(filter.Where)
+                .Skip((filter.PageIndex - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToArray();
+            }
+
+            return entities.ToList();
         }
 
         public ICollection<T> GetList()

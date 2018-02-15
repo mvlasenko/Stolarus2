@@ -1,14 +1,16 @@
 ﻿@using Stolarus2.Data.Properties
 @using Stolarus2.Data.Contracts
-@using Stolarus2.Data.Models
+
 @model IPagedCollection
 
 @{
-    ViewBag.Title = Resources.Categories;
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+
+    ViewBag.Title = controller;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Resources.Categories</h2>
+<h2>@controller</h2>
 
 <div style="padding-bottom: 10px;">
     <button class="btn btn-primary create-item">@Resources.CreateNew</button>
@@ -19,53 +21,21 @@
 
         <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => ((Category)model).Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => ((Category)model).Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => ((Category)model).ImagePath)
-                </th>
-
+            @foreach (string propName in ViewBag.ListFields)
+            {
+                <th>@propName</th>
+            }
                 <th></th>
             </tr>
         </thead>
 
-        <tbody>
-            @foreach (Category item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImagePath)
-                    </td>
-
-                    <td align="right">
-                        <button class="btn btn-primary edit-item" data-id="@item.Id">@Resources.Edit</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
+        <tbody></tbody>
 
     </table>
 </div>
 
-@if (Model != null && Model.TotalCount > Model.PageSize)
-{
-    <div style="margin: 6px;">
-        @for (int i = 1; i <= (Model.TotalCount - 1) / Model.PageSize + 1; i++)
-        {
-            <button class="btn btn-primary page-item @(i == 1 ? "disabled" : "")" style="margin: 4px;" data-id="@i">@i</button>
-        }
-    </div>
-}
+<div id="pager" style="margin: 6px;">
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -85,11 +55,11 @@
 
     @Scripts.Render("~/bundles/jqueryval")
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         function InitModal() {
             $('.edit-item').click(function() {
-                var url = "@Url.Content("~/")Categories/UpdatePartial";
+                var url = "@Url.Content("~/")@controller/UpdatePartial";
                 var id = $(this).attr('data-id');
                 $.get(url + '/' + id, function(data) {
                     $('#modal-content').html(data);
@@ -102,7 +72,7 @@
             });
 
             $('.create-item').click(function() {
-                var url = "@Url.Content("~/")Categories/CreatePartial";
+                var url = "@Url.Content("~/")@controller/CreatePartial";
                 $.get(url, function(data) {
                     $('#modal-content').html(data);
 
@@ -112,9 +82,43 @@
                     AddAsterisk();
                 });
             });
+
+            $('.delete-item').click(function () {
+
+                if (confirm('@Resources.DeleteConfirm'))
+                {
+                    var url = "@Url.Content("~/")@controller/DestroyPartial";
+                    var id = $(this).attr('data-id');
+                    $.get(url + '/' + id, function(data) {
+
+                        totalCount = data.totalCount;
+
+                        var pageSize = @Model.PageSize;
+                        var pageIndex = Math.floor((totalCount - 1) / pageSize) + 1;
+                        if (pageIndex <= currentPageIndex)
+                        {
+                            currentPageIndex = pageIndex;
+                            InitPager(currentPageIndex);
+                        }
+                        
+                        RefreshGrid(currentPageIndex);
+
+                    });
+                }
+            });
         }
 
-        function InitPager() {
+        function InitPager(pageIndex) {
+
+            var pageSize = @Model.PageSize;
+
+            $('#pager').empty();
+
+            for (i = 1; i <= (totalCount - 1) / pageSize + 1; i++)
+            {
+                $('#pager').append('<button class="btn btn-primary page-item ' + (i == pageIndex ? "disabled" : "") + '" style="margin: 4px;" data-id="' + i +'">' + i + '</button>');
+            }
+
             $('.page-item').click(function () {
                 currentPageIndex = $(this).attr('data-id');
 
@@ -125,14 +129,9 @@
             });
         }
 
-        function PageToFirst() {
-            $('.page-item').removeClass("disabled");
-            $('.page-item').first().addClass("disabled");
-        }
-
         function RefreshGrid(pageIndex) {
             $('#loader').modal('show');
-            var url = "@Url.Content("~/")Categories/GetList/" + pageIndex;
+            var url = "@Url.Content("~/")@controller/GetPagedList/" + pageIndex;
             $.ajax({
                 type: 'GET',
                 dataType: 'Json',
@@ -140,8 +139,18 @@
                 success: function(data) {
 
                     $('table#grid TBODY').empty();
-                    $.each(data, function(idx, item) {
-                        $('table#grid TBODY').append("<tr><td>" + (item.Title || '') + "</td><td>" + (item.Description || '') + "</td><td>" + (item.ImagePath || '') + "</td><td align='right'><button class='btn btn-primary edit-item' data-id='" + item.Id + "'>@Resources.Edit</button></td></tr>");
+
+                    $.each(data, function (idx, item) {
+                        var row = "<tr>";
+
+                    @foreach (string propName in ViewBag.ListFields)
+                    {
+                        @Html.Raw("row += '<td>' + (item." + propName + " || '') + '</td>';");
+                    }
+                        row += "<td align='right'><button class='btn btn-primary edit-item' data-id='" + item.Id + "'>@Resources.Edit</button> <button class='btn btn-primary delete-item' data-id='" + item.Id + "'>@Resources.Delete</button></td>";
+                        row += "</tr>";
+
+                        $('table#grid TBODY').append(row);
                     });
 
                     $('#loader').modal('hide');
@@ -166,14 +175,32 @@
             });
         }
 
+        function onCreateSuccess(data) {
+
+            totalCount = data.totalCount;
+
+            var pageSize = @Model.PageSize;
+            var pageIndex = Math.floor((totalCount - 1) / pageSize) + 1;
+            if (pageIndex != currentPageIndex)
+            {
+                currentPageIndex = pageIndex;
+                InitPager(currentPageIndex);
+            }
+
+            RefreshGrid(currentPageIndex);
+        }
+
+        var totalCount = @Model.TotalCount ;
         var currentPageIndex = 1;
 
         $(document).ready(function() {
 
             InitModal();
 
-            InitPager();
+            InitPager(currentPageIndex);
+
+            RefreshGrid(currentPageIndex);
         });
 
-    </script>
+</script>
 }

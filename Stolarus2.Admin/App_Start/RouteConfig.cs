@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Stolarus2.Admin
@@ -18,6 +14,13 @@ namespace Stolarus2.Admin
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "GetPagedList",
+            //    url: "{controller}/GetPagedList/{pageIndex}",
+            //    defaults: new { controller = "Home", action = "GetPagedList", pageIndex = UrlParameter.Optional }
+            //);
+
         }
     }
 }

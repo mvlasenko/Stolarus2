@@ -1,5 +1,5 @@
 ﻿@using Stolarus2.Data.Properties
-@using (Ajax.BeginForm(null, null,
+@using (Ajax.BeginForm("UpdatePartial", null,
     new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
@@ -18,7 +18,7 @@
         @Html.EditorForModel()
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" onclick="if ($('#frmModal').valid()) { $('#modal').modal('hide'); currentPageIndex = 1; PageToFirst(); $('#loader').modal('show') }">@Resources.Save</button>
+        <button type="submit" class="btn btn-primary" onclick="if ($('#frmModal').valid()) { $('#modal').modal('hide'); $('#loader').modal('show') }">@Resources.Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">@Resources.Close</button>
     </div>
 }

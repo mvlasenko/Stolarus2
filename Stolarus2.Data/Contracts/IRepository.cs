@@ -11,6 +11,7 @@ namespace Stolarus2.Data.Contracts
         T GetById(TKey id);
         IPagedCollection GetPaged(IFilter<T, TKey> filter);
         ICollection<T> GetList();
+        ICollection<T> GetPagedList(IFilter<T, TKey> filter);
         T Insert(T entity);
         T Update(T entity);
         DbContext GetContext();
