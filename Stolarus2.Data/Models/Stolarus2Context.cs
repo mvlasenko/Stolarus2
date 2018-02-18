@@ -13,6 +13,8 @@ namespace Stolarus2.Data.Models
         {
             modelBuilder.Configurations.Add(new ProductMap());
             modelBuilder.Configurations.Add(new CategoryMap());
+            modelBuilder.Configurations.Add(new CountryMap());
+            modelBuilder.Configurations.Add(new LanguageMap());
 
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

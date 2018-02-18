@@ -44,6 +44,10 @@ namespace Stolarus2.Admin
 
             container.RegisterType<ICategoriesRepository, CategoriesRepository>();
 
+            container.RegisterType<ICountriesRepository, CountriesRepository>();
+
+            container.RegisterType<ILanguagesRepository, LanguagesRepository>();
+
         }
     }
 }

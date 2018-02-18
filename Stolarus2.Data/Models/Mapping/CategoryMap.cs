@@ -33,9 +33,9 @@ namespace Stolarus2.Data.Models.Mapping
 
             // Relationships
 
-            //this.HasMany(e => e.Products)
-            //    .WithRequired(e => e.Category)
-            //    .WillCascadeOnDelete(false);
+            this.HasMany(e => e.Products)
+                .WithOptional(e => e.Category)
+                .WillCascadeOnDelete(false);
         }
     }
 }

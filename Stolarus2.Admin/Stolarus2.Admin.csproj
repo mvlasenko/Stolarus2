@@ -164,11 +164,18 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\UIHelper.cs" />
+    <Compile Include="ModelBinding\ProductsFilterModelBinder.cs" />
+    <Compile Include="ModelBinding\LanguagesFilterModelBinder.cs" />
+    <Compile Include="ModelBinding\CountriesFilterModelBinder.cs" />
     <Compile Include="ModelBinding\CategoriesFilterModelBinder.cs" />
     <Compile Include="ModelBinding\FilterModelBinderBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -334,6 +341,23 @@
     <Content Include="Views\Shared\_CreatePartial.cshtml" />
     <Content Include="Views\Shared\_EditPartial.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Object.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Country.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_DatePicker.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_DateTimePicker.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Languages.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Product.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Products.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_TimeZone.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stolarus2.Data\Stolarus2.Data.csproj">

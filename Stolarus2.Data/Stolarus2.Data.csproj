@@ -73,16 +73,22 @@
   <ItemGroup>
     <Compile Include="Attributes\IncludeListAttribute.cs" />
     <Compile Include="Common\PagedCollection.cs" />
+    <Compile Include="Contracts\ICountriesRepository.cs" />
     <Compile Include="Contracts\IDbContextFactory.cs" />
     <Compile Include="Contracts\IEntity.cs" />
     <Compile Include="Contracts\IFilter.cs" />
     <Compile Include="Contracts\IPagedCollection.cs" />
     <Compile Include="Contracts\IPagedCollection`.cs" />
     <Compile Include="Contracts\ICategoriesRepository.cs" />
+    <Compile Include="Contracts\ILanguagesRepository.cs" />
     <Compile Include="Contracts\IProductsRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Filters\Filter.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Mapping\LanguageMap.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
     <Compile Include="Models\Mapping\CategoryMap.cs" />
     <Compile Include="Models\Mapping\ProductMap.cs" />
     <Compile Include="Models\Product.cs" />
@@ -93,8 +99,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repository\CountriesRepository.cs" />
     <Compile Include="Repository\CategoriesRepository.cs" />
     <Compile Include="Repository\DbContextFactory.cs" />
+    <Compile Include="Repository\LanguagesRepository.cs" />
     <Compile Include="Repository\ProductsRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>

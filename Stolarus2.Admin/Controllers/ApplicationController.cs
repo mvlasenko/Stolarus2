@@ -23,6 +23,7 @@ namespace Stolarus2.Admin.Controllers
             IPagedCollection model = this.LoadCollection(filter);
 
             ViewBag.ListFields = typeof(T).GetProperties().Where(prop => prop.GetCustomAttributes().Any(x => x is IncludeListAttribute)).Select(prop => prop.Name).ToList();
+            ViewBag.ListFieldHeaders = typeof(T).GetProperties().Where(prop => prop.GetCustomAttributes().Any(x => x is IncludeListAttribute)).Select(prop => ((IncludeListAttribute)prop.GetCustomAttributes().First(x => x is IncludeListAttribute)).IncludeListTitle ?? prop.Name).ToList();
 
             return View("Index", model);
         }
