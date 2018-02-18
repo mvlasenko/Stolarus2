@@ -129,6 +129,9 @@
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>Category</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="Elements" xml:space="preserve">
     <value>Elements</value>
+  </data>
+  <data name="ImagePath" xml:space="preserve">
+    <value>Image</value>
   </data>
   <data name="Languages" xml:space="preserve">
     <value>Languages</value>

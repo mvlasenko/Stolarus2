@@ -97,6 +97,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string CategoryId {
+            get {
+                return ResourceManager.GetString("CategoryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -210,6 +219,15 @@ namespace Stolarus2.Data.Properties {
         public static string Elements {
             get {
                 return ResourceManager.GetString("Elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string ImagePath {
+            get {
+                return ResourceManager.GetString("ImagePath", resourceCulture);
             }
         }
         

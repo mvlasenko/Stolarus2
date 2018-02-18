@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
+using Stolarus2.Data.Properties;
 
 namespace Stolarus2.Data.Models
 {
@@ -17,9 +18,11 @@ namespace Stolarus2.Data.Models
         [IncludeList()]
         public string Description { get; set; }
 
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources))]
         [IncludeList("Image")]
         public string ImagePath { get; set; }
 
+        [Display(Name = "CategoryId", ResourceType = typeof(Resources))]
         [UIHint("_Category")]
         public int? CategoryId { get; set; }
 
