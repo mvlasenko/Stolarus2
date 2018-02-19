@@ -4,9 +4,9 @@ using Stolarus2.Data.Models;
 
 namespace Stolarus2.Admin.Controllers.Api
 {
-    public class ProductsController : ApiController<Product, int>
+    public class CountriesController : ApiController<Country, int>
     {
-        public ProductsController() : base(DependencyResolver.Current.GetService<IProductsRepository>())
+        public CountriesController() : base(DependencyResolver.Current.GetService<ICountriesRepository>())
         {
 
         }
