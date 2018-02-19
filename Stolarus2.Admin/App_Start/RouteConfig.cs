@@ -12,14 +12,9 @@ namespace Stolarus2.Admin
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "Stolarus2.Admin.Controllers" }
             );
-
-            //routes.MapRoute(
-            //    name: "GetPagedList",
-            //    url: "{controller}/GetPagedList/{pageIndex}",
-            //    defaults: new { controller = "Home", action = "GetPagedList", pageIndex = UrlParameter.Optional }
-            //);
 
         }
     }

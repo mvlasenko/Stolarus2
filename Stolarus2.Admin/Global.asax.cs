@@ -9,13 +9,13 @@ namespace Stolarus2.Admin
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ModelBindersConfig.RegisterModelBinders(ModelBinders.Binders);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }

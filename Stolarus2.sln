@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stolarus2", "Stolarus2\Stol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stolarus2.Data", "Stolarus2.Data\Stolarus2.Data.csproj", "{DD339941-CFF1-4F6F-9E61-7EDB29C9344F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stolarus2.Api", "Stolarus2.Api\Stolarus2.Api.csproj", "{3E207CB5-43E8-43AD-8C24-7EC25B6B7302}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stolarus2.Admin", "Stolarus2.Admin\Stolarus2.Admin.csproj", "{2CB6D833-CCE9-4E5F-9F89-06AB45664C71}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{DD339941-CFF1-4F6F-9E61-7EDB29C9344F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD339941-CFF1-4F6F-9E61-7EDB29C9344F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD339941-CFF1-4F6F-9E61-7EDB29C9344F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E207CB5-43E8-43AD-8C24-7EC25B6B7302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E207CB5-43E8-43AD-8C24-7EC25B6B7302}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E207CB5-43E8-43AD-8C24-7EC25B6B7302}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E207CB5-43E8-43AD-8C24-7EC25B6B7302}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CB6D833-CCE9-4E5F-9F89-06AB45664C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CB6D833-CCE9-4E5F-9F89-06AB45664C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CB6D833-CCE9-4E5F-9F89-06AB45664C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
