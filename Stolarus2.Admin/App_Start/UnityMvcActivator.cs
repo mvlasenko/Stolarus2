@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Web.Mvc;
-
 using Unity.AspNet.Mvc;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Stolarus2.Admin.UnityMvcActivator), nameof(Stolarus2.Admin.UnityMvcActivator.Start))]

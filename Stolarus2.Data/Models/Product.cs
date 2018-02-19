@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
+using System.Xml.Serialization;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
 using Stolarus2.Data.Properties;
@@ -28,6 +29,8 @@ namespace Stolarus2.Data.Models
 
         [ScaffoldColumn(false)]
         [IncludeList("Category Name")]
+        [ScriptIgnore(ApplyToOverrides = true)]
+        [XmlIgnore]
         public string CategoryName
         {
             get
@@ -41,6 +44,7 @@ namespace Stolarus2.Data.Models
 
         [ScaffoldColumn(false)]
         [ScriptIgnore(ApplyToOverrides = true)]
+        [XmlIgnore]
         public virtual Category Category { get; set; }
     }
 }

@@ -37,11 +37,15 @@ namespace Stolarus2.Api
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            container.RegisterType<IDbContextFactory, DbContextFactory>();
+            //container.RegisterType<IDbContextFactory, DbContextFactory>();
 
-            container.RegisterType<IProductsRepository, ProductsRepository>();
+            //container.RegisterType<IProductsRepository, ProductsRepository>();
 
-            container.RegisterType<ICategoriesRepository, CategoriesRepository>();
+            //container.RegisterType<ICategoriesRepository, CategoriesRepository>();
+
+            //container.RegisterType<ICountriesRepository, CountriesRepository>();
+
+            //container.RegisterType<ILanguagesRepository, LanguagesRepository>();
 
         }
     }

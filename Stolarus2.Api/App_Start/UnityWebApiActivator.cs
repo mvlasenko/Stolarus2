@@ -1,5 +1,4 @@
 using System.Web.Http;
-
 using Unity.AspNet.WebApi;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Stolarus2.Api.UnityWebApiActivator), nameof(Stolarus2.Api.UnityWebApiActivator.Start))]

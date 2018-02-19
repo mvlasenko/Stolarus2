@@ -1,7 +1,6 @@
+using System;
 using Stolarus2.Data.Contracts;
 using Stolarus2.Data.Repository;
-using System;
-
 using Unity;
 
 namespace Stolarus2.Admin

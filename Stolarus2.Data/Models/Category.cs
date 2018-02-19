@@ -3,6 +3,7 @@ using Stolarus2.Data.Contracts;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
+using System.Xml.Serialization;
 
 namespace Stolarus2.Data.Models
 {
@@ -27,6 +28,7 @@ namespace Stolarus2.Data.Models
 
         [ScaffoldColumn(false)]
         [ScriptIgnore(ApplyToOverrides = true)]
+        [XmlIgnore]
         public virtual ICollection<Product> Products { get; set; }
     }
 }

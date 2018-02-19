@@ -1,9 +1,9 @@
-﻿using Stolarus2.Data.Contracts;
-using Stolarus2.Data.Models;
-using Stolarus2.Data.Repository;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Mvc;
+using Stolarus2.Data.Contracts;
+using Stolarus2.Data.Models;
 
 namespace Stolarus2.Api.Controllers
 {
@@ -13,8 +13,7 @@ namespace Stolarus2.Api.Controllers
 
         public HomePageController()
         {
-            IDbContextFactory factory = new DbContextFactory();
-            this._repository = new CategoriesRepository(factory);
+            this._repository = DependencyResolver.Current.GetService<ICategoriesRepository>();
         }
 
         public IHttpActionResult GetCategories()

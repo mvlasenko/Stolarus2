@@ -6,8 +6,10 @@ namespace Stolarus2.Data.Models
 {
     public class Stolarus2Context : DbContext
     {
-        //public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public Stolarus2Context()
+        {
+            Configuration.ProxyCreationEnabled = false;
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
