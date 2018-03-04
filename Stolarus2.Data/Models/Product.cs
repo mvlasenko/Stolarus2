@@ -29,8 +29,8 @@ namespace Stolarus2.Data.Models
 
         [ScaffoldColumn(false)]
         [IncludeList("Category Name")]
-        [ScriptIgnore(ApplyToOverrides = true)]
-        [XmlIgnore]
+        //[ScriptIgnore(ApplyToOverrides = true)]
+        //[XmlIgnore]
         public string CategoryName
         {
             get

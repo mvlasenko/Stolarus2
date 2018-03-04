@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using Stolarus2.Data.Contracts;
 
-namespace Stolarus2.Admin.Controllers.Api
+namespace Stolarus2.Controllers.Api
 {
     public abstract class ApiController<T, TKey> : ApiController where T : class, IEntity<TKey>, new()
     {
