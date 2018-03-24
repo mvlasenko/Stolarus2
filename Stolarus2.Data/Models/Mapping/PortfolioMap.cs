@@ -40,7 +40,7 @@ namespace Stolarus2.Data.Models.Mapping
                 .HasForeignKey(d => d.PortfolioTypeId);
 
             this.HasMany(e => e.PortfolioDetails)
-                .WithOptional(e => e.Portfolio)
+                .WithRequired(e => e.Portfolio)
                 .WillCascadeOnDelete(false);
 
         }

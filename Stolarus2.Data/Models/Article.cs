@@ -14,7 +14,7 @@ namespace Stolarus2.Data.Models
         public int Id { get; set; }
 
         [Display(Name = "Category")]
-        public int ArticleCategoryId { get; set; }
+        public int? ArticleCategoryId { get; set; }
 
         [ScaffoldColumn(false)]
         [IncludeList("ArticleCategory")]

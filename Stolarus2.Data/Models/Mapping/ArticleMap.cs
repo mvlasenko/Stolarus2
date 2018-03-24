@@ -38,7 +38,7 @@ namespace Stolarus2.Data.Models.Mapping
             this.Property(t => t.SeqID).HasColumnName("SeqID");
 
             // Relationships
-            this.HasRequired(t => t.ArticleCategory)
+            this.HasOptional(t => t.ArticleCategory)
                 .WithMany(t => t.Article)
                 .HasForeignKey(d => d.ArticleCategoryId);
 
