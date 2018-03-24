@@ -1,4 +1,4 @@
-﻿using Stolarus2.Data.Models.Mapping;
+using Stolarus2.Data.Models.Mapping;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -13,11 +13,17 @@ namespace Stolarus2.Data.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new SliderMap());
+            modelBuilder.Configurations.Add(new ProductCategoryMap());
             modelBuilder.Configurations.Add(new ProductMap());
-            modelBuilder.Configurations.Add(new CategoryMap());
-            modelBuilder.Configurations.Add(new CountryMap());
-            modelBuilder.Configurations.Add(new LanguageMap());
-
+            modelBuilder.Configurations.Add(new PortfolioTypeMap());
+            modelBuilder.Configurations.Add(new PortfolioMap());
+            modelBuilder.Configurations.Add(new PortfolioDetailMap());
+            modelBuilder.Configurations.Add(new ArticleMap());
+            modelBuilder.Configurations.Add(new ArticleCategoryMap());
+            modelBuilder.Configurations.Add(new QuoteMap());
+            modelBuilder.Configurations.Add(new ContactMap());
+            modelBuilder.Configurations.Add(new CertificateMap());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

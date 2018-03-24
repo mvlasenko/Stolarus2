@@ -18,7 +18,7 @@
     <AssemblyName>Stolarus2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -174,13 +174,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.custom.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
-    <Compile Include="Controllers\Api\CategoriesController.cs" />
-    <Compile Include="Controllers\Api\CountriesController.cs" />
-    <Compile Include="Controllers\Api\LanguagesController.cs" />
+    <Compile Include="Controllers\Api\ArticleCategoriesController.cs" />
+    <Compile Include="Controllers\Api\ArticleController.cs" />
+    <Compile Include="Controllers\Api\CertificatesController.cs" />
+    <Compile Include="Controllers\Api\ContactsController.cs" />
+    <Compile Include="Controllers\Api\PortfolioDetailsController.cs" />
+    <Compile Include="Controllers\Api\PortfoliosController.cs" />
+    <Compile Include="Controllers\Api\PortfolioTypesController.cs" />
+    <Compile Include="Controllers\Api\ProductCategoriesController.cs" />
     <Compile Include="Controllers\Api\ProductsController.cs" />
+    <Compile Include="Controllers\Api\QuotesController.cs" />
+    <Compile Include="Controllers\Api\SlidersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -394,7 +402,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49213</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49213/</IISUrl>
+          <IISUrl>http://stolarus/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

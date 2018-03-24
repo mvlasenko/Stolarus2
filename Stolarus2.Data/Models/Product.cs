@@ -1,10 +1,10 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
-using Stolarus2.Data.Properties;
 
 namespace Stolarus2.Data.Models
 {
@@ -14,37 +14,49 @@ namespace Stolarus2.Data.Models
         public int Id { get; set; }
 
         [IncludeList()]
-        public string Title { get; set; }
+        public string Name { get; set; }
 
-        [IncludeList()]
         public string Description { get; set; }
 
-        [Display(Name = "ImagePath", ResourceType = typeof(Resources))]
-        [IncludeList("Image")]
-        public string ImagePath { get; set; }
+        public string ShortDescription { get; set; }
 
-        [Display(Name = "CategoryId", ResourceType = typeof(Resources))]
-        [UIHint("_Category")]
+        [IncludeList("Image")]
+        [Display(Name = "Image")]
+        public string ImageURL { get; set; }
+
+        [IncludeList()]
+        public decimal Price { get; set; }
+
+        public string Code { get; set; }
+
+        [Display(Name = "Category")]
         public int? CategoryId { get; set; }
 
         [ScaffoldColumn(false)]
-        [IncludeList("Category Name")]
-        //[ScriptIgnore(ApplyToOverrides = true)]
-        //[XmlIgnore]
-        public string CategoryName
+        [IncludeList("ProductCategory")]
+        public string ProductCategoryName
         {
             get
             {
-                if (this.Category == null)
+                if (this.ProductCategory == null)
                     return String.Empty;
 
-                return string.Format("{0}", this.Category.Title);
+                return string.Format("{0}", this.ProductCategory.Name);
             }
         }
 
         [ScaffoldColumn(false)]
         [ScriptIgnore(ApplyToOverrides = true)]
         [XmlIgnore]
-        public virtual Category Category { get; set; }
+        public virtual ProductCategory ProductCategory { get; set; }
+
+        [IncludeList("Created")]
+        [Display(Name = "Created")]
+        public DateTime CreatedDateTime { get; set; }
+
+        [IncludeList()]
+        [ScaffoldColumn(false)]
+        public int? SeqID { get; set; }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+using System.Web.Mvc;
 using Stolarus2.Data.Contracts;
 using Stolarus2.Data.Models;
 

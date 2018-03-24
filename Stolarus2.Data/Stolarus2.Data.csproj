@@ -73,25 +73,46 @@
   <ItemGroup>
     <Compile Include="Attributes\IncludeListAttribute.cs" />
     <Compile Include="Common\PagedCollection.cs" />
-    <Compile Include="Contracts\ICountriesRepository.cs" />
+    <Compile Include="Contracts\IArticleCategoriesRepository.cs" />
+    <Compile Include="Contracts\IArticleRepository.cs" />
+    <Compile Include="Contracts\ICertificatesRepository.cs" />
+    <Compile Include="Contracts\IContactsRepository.cs" />
     <Compile Include="Contracts\IDbContextFactory.cs" />
     <Compile Include="Contracts\IEntity.cs" />
     <Compile Include="Contracts\IFilter.cs" />
     <Compile Include="Contracts\IPagedCollection.cs" />
     <Compile Include="Contracts\IPagedCollection`.cs" />
-    <Compile Include="Contracts\ICategoriesRepository.cs" />
-    <Compile Include="Contracts\ILanguagesRepository.cs" />
+    <Compile Include="Contracts\IPortfolioDetailsRepository.cs" />
+    <Compile Include="Contracts\IPortfoliosRepository.cs" />
+    <Compile Include="Contracts\IPortfolioTypesRepository.cs" />
+    <Compile Include="Contracts\IProductCategoriesRepository.cs" />
     <Compile Include="Contracts\IProductsRepository.cs" />
+    <Compile Include="Contracts\IQuotesRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Country.cs" />
+    <Compile Include="Contracts\ISlidersRepository.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleCategory.cs" />
+    <Compile Include="Models\Certificate.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Filters\Filter.cs" />
-    <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\Mapping\LanguageMap.cs" />
-    <Compile Include="Models\Mapping\CountryMap.cs" />
-    <Compile Include="Models\Mapping\CategoryMap.cs" />
+    <Compile Include="Models\Mapping\ArticleCategoryMap.cs" />
+    <Compile Include="Models\Mapping\ArticleMap.cs" />
+    <Compile Include="Models\Mapping\CertificateMap.cs" />
+    <Compile Include="Models\Mapping\ContactMap.cs" />
+    <Compile Include="Models\Mapping\PortfolioDetailMap.cs" />
+    <Compile Include="Models\Mapping\PortfolioMap.cs" />
+    <Compile Include="Models\Mapping\PortfolioTypeMap.cs" />
+    <Compile Include="Models\Mapping\ProductCategoryMap.cs" />
     <Compile Include="Models\Mapping\ProductMap.cs" />
+    <Compile Include="Models\Mapping\QuoteMap.cs" />
+    <Compile Include="Models\Mapping\SliderMap.cs" />
+    <Compile Include="Models\Portfolio.cs" />
+    <Compile Include="Models\PortfolioDetail.cs" />
+    <Compile Include="Models\PortfolioType.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\Slider.cs" />
     <Compile Include="Models\Stolarus2Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -99,12 +120,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Repository\CountriesRepository.cs" />
-    <Compile Include="Repository\CategoriesRepository.cs" />
+    <Compile Include="Repository\ArticleCategoriesRepository.cs" />
+    <Compile Include="Repository\ArticleRepository.cs" />
+    <Compile Include="Repository\CertificatesRepository.cs" />
+    <Compile Include="Repository\ContactsRepository.cs" />
     <Compile Include="Repository\DbContextFactory.cs" />
-    <Compile Include="Repository\LanguagesRepository.cs" />
+    <Compile Include="Repository\PortfolioDetailsRepository.cs" />
+    <Compile Include="Repository\PortfoliosRepository.cs" />
+    <Compile Include="Repository\PortfolioTypesRepository.cs" />
+    <Compile Include="Repository\ProductCategoriesRepository.cs" />
     <Compile Include="Repository\ProductsRepository.cs" />
+    <Compile Include="Repository\QuotesRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\SlidersRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -113,6 +141,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

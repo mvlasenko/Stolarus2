@@ -126,12 +126,6 @@
   <data name="BackToList" xml:space="preserve">
     <value>Back to List</value>
   </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Categories</value>
-  </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Category</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -143,9 +137,6 @@
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>Stolarus. All rights reserved.</value>
-  </data>
-  <data name="Countries" xml:space="preserve">
-    <value>Countries</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Create</value>
@@ -171,28 +162,73 @@
   <data name="Elements" xml:space="preserve">
     <value>Elements</value>
   </data>
-  <data name="ImagePath" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="Languages" xml:space="preserve">
-    <value>Languages</value>
-  </data>
-  <data name="Products" xml:space="preserve">
-    <value>Products</value>
-  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="SelectCategory" xml:space="preserve">
-    <value>Select Category</value>
+  <data name="SelectSlider" xml:space="preserve">
+    <value>Select Slider</value>
   </data>
-  <data name="SelectCountry" xml:space="preserve">
-    <value>Select Country</value>
+  <data name="Sliders" xml:space="preserve">
+    <value>Sliders</value>
+  </data>
+  <data name="SelectProductCategory" xml:space="preserve">
+    <value>Select Product Category</value>
+  </data>
+  <data name="ProductCategories" xml:space="preserve">
+    <value>Product Categories</value>
   </data>
   <data name="SelectProduct" xml:space="preserve">
     <value>Select Product</value>
   </data>
-  <data name="SelectTimeZone" xml:space="preserve">
-    <value>Select Time Zone</value>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="SelectPortfolioType" xml:space="preserve">
+    <value>Select PortfolioType</value>
+  </data>
+  <data name="PortfolioTypes" xml:space="preserve">
+    <value>Portfolio Types</value>
+  </data>
+  <data name="SelectPortfolio" xml:space="preserve">
+    <value>Select Portfolio</value>
+  </data>
+  <data name="Portfolios" xml:space="preserve">
+    <value>Portfolios</value>
+  </data>
+  <data name="SelectPortfolioDetail" xml:space="preserve">
+    <value>Select Portfolio Detail</value>
+  </data>
+  <data name="PortfolioDetails" xml:space="preserve">
+    <value>Portfolio Details</value>
+  </data>
+  <data name="SelectArticle" xml:space="preserve">
+    <value>Select Article</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="SelectArticleCategory" xml:space="preserve">
+    <value>Select Article Category</value>
+  </data>
+  <data name="ArticleCategories" xml:space="preserve">
+    <value>ArticleCategories</value>
+  </data>
+  <data name="SelectQuote" xml:space="preserve">
+    <value>Select Quote</value>
+  </data>
+  <data name="Quotes" xml:space="preserve">
+    <value>Quotes</value>
+  </data>
+  <data name="SelectContact" xml:space="preserve">
+    <value>Select Contact</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="SelectCertificate" xml:space="preserve">
+    <value>Select Certificate</value>
+  </data>
+  <data name="Certificates" xml:space="preserve">
+    <value>Certificates</value>
   </data>
 </root>

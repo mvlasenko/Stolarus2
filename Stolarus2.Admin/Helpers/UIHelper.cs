@@ -12,28 +12,61 @@ namespace Stolarus2.Admin.Helpers
 {
     public static class UIHelper
     {
-        public static List<Category> GetCategories()
+
+        public static List<Slider> GetSliders()
         {
-            ICategoriesRepository repository = DependencyResolver.Current.GetService<ICategoriesRepository>();
+            ISlidersRepository repository = DependencyResolver.Current.GetService<ISlidersRepository>();
             return repository.GetList().ToList();
         }
-
-        public static List<Country> GetCountries()
+        public static List<ProductCategory> GetProductCategories()
         {
-            ICountriesRepository repository = DependencyResolver.Current.GetService<ICountriesRepository>();
+            IProductCategoriesRepository repository = DependencyResolver.Current.GetService<IProductCategoriesRepository>();
             return repository.GetList().ToList();
         }
-
         public static List<Product> GetProducts()
         {
             IProductsRepository repository = DependencyResolver.Current.GetService<IProductsRepository>();
             return repository.GetList().ToList();
         }
-
-        public static List<Language> GetLanguages()
+        public static List<PortfolioType> GetPortfolioTypes()
         {
-            ILanguagesRepository languagesRepository = DependencyResolver.Current.GetService<ILanguagesRepository>();
-            return languagesRepository.GetList().ToList();
+            IPortfolioTypesRepository repository = DependencyResolver.Current.GetService<IPortfolioTypesRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<Portfolio> GetPortfolios()
+        {
+            IPortfoliosRepository repository = DependencyResolver.Current.GetService<IPortfoliosRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<PortfolioDetail> GetPortfolioDetails()
+        {
+            IPortfolioDetailsRepository repository = DependencyResolver.Current.GetService<IPortfolioDetailsRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<Article> GetArticle()
+        {
+            IArticleRepository repository = DependencyResolver.Current.GetService<IArticleRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<ArticleCategory> GetArticleCategories()
+        {
+            IArticleCategoriesRepository repository = DependencyResolver.Current.GetService<IArticleCategoriesRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<Quote> GetQuotes()
+        {
+            IQuotesRepository repository = DependencyResolver.Current.GetService<IQuotesRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<Contact> GetContacts()
+        {
+            IContactsRepository repository = DependencyResolver.Current.GetService<IContactsRepository>();
+            return repository.GetList().ToList();
+        }
+        public static List<Certificate> GetCertificates()
+        {
+            ICertificatesRepository repository = DependencyResolver.Current.GetService<ICertificatesRepository>();
+            return repository.GetList().ToList();
         }
 
         public static MvcHtmlString Cut(this MvcHtmlString str, int maxLength)

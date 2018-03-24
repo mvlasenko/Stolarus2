@@ -79,6 +79,24 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string Article {
+            get {
+                return ResourceManager.GetString("Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArticleCategories.
+        /// </summary>
+        public static string ArticleCategories {
+            get {
+                return ResourceManager.GetString("ArticleCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to List.
         /// </summary>
         public static string BackToList {
@@ -88,20 +106,11 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categories.
+        ///   Looks up a localized string similar to Certificates.
         /// </summary>
-        public static string Categories {
+        public static string Certificates {
             get {
-                return ResourceManager.GetString("Categories", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Category.
-        /// </summary>
-        public static string CategoryId {
-            get {
-                return ResourceManager.GetString("CategoryId", resourceCulture);
+                return ResourceManager.GetString("Certificates", resourceCulture);
             }
         }
         
@@ -111,6 +120,15 @@ namespace Stolarus2.Data.Properties {
         public static string Close {
             get {
                 return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string Contacts {
+            get {
+                return ResourceManager.GetString("Contacts", resourceCulture);
             }
         }
         
@@ -138,15 +156,6 @@ namespace Stolarus2.Data.Properties {
         public static string Copyright {
             get {
                 return ResourceManager.GetString("Copyright", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Countries.
-        /// </summary>
-        public static string Countries {
-            get {
-                return ResourceManager.GetString("Countries", resourceCulture);
             }
         }
         
@@ -223,20 +232,38 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image.
+        ///   Looks up a localized string similar to Portfolio Details.
         /// </summary>
-        public static string ImagePath {
+        public static string PortfolioDetails {
             get {
-                return ResourceManager.GetString("ImagePath", resourceCulture);
+                return ResourceManager.GetString("PortfolioDetails", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Languages.
+        ///   Looks up a localized string similar to Portfolios.
         /// </summary>
-        public static string Languages {
+        public static string Portfolios {
             get {
-                return ResourceManager.GetString("Languages", resourceCulture);
+                return ResourceManager.GetString("Portfolios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portfolio Types.
+        /// </summary>
+        public static string PortfolioTypes {
+            get {
+                return ResourceManager.GetString("PortfolioTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Categories.
+        /// </summary>
+        public static string ProductCategories {
+            get {
+                return ResourceManager.GetString("ProductCategories", resourceCulture);
             }
         }
         
@@ -250,6 +277,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quotes.
+        /// </summary>
+        public static string Quotes {
+            get {
+                return ResourceManager.GetString("Quotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -259,20 +295,65 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Category.
+        ///   Looks up a localized string similar to Select Article.
         /// </summary>
-        public static string SelectCategory {
+        public static string SelectArticle {
             get {
-                return ResourceManager.GetString("SelectCategory", resourceCulture);
+                return ResourceManager.GetString("SelectArticle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Country.
+        ///   Looks up a localized string similar to Select Article Category.
         /// </summary>
-        public static string SelectCountry {
+        public static string SelectArticleCategory {
             get {
-                return ResourceManager.GetString("SelectCountry", resourceCulture);
+                return ResourceManager.GetString("SelectArticleCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Certificate.
+        /// </summary>
+        public static string SelectCertificate {
+            get {
+                return ResourceManager.GetString("SelectCertificate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Contact.
+        /// </summary>
+        public static string SelectContact {
+            get {
+                return ResourceManager.GetString("SelectContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Portfolio.
+        /// </summary>
+        public static string SelectPortfolio {
+            get {
+                return ResourceManager.GetString("SelectPortfolio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Portfolio Detail.
+        /// </summary>
+        public static string SelectPortfolioDetail {
+            get {
+                return ResourceManager.GetString("SelectPortfolioDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select PortfolioType.
+        /// </summary>
+        public static string SelectPortfolioType {
+            get {
+                return ResourceManager.GetString("SelectPortfolioType", resourceCulture);
             }
         }
         
@@ -286,11 +367,38 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Time Zone.
+        ///   Looks up a localized string similar to Select Product Category.
         /// </summary>
-        public static string SelectTimeZone {
+        public static string SelectProductCategory {
             get {
-                return ResourceManager.GetString("SelectTimeZone", resourceCulture);
+                return ResourceManager.GetString("SelectProductCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Quote.
+        /// </summary>
+        public static string SelectQuote {
+            get {
+                return ResourceManager.GetString("SelectQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Slider.
+        /// </summary>
+        public static string SelectSlider {
+            get {
+                return ResourceManager.GetString("SelectSlider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sliders.
+        /// </summary>
+        public static string Sliders {
+            get {
+                return ResourceManager.GetString("Sliders", resourceCulture);
             }
         }
     }
