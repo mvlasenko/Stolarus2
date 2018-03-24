@@ -18,9 +18,9 @@ namespace Stolarus2.T4.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
+    #line 1 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\EditorTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class EditorTemplate : EditorTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,279 +28,36 @@ namespace Stolarus2.T4.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.ComponentModel.Dat" +
-                    "aAnnotations;\r\nusing System.Web.Script.Serialization;\r\nusing System.Xml.Serializ" +
-                    "ation;\r\nusing ");
+            this.Write("@using ");
             
-            #line 11 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
+            #line 6 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\EditorTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RootNamespace));
             
             #line default
             #line hidden
-            this.Write(".Admin.Attributes;\r\nusing ");
+            this.Write(".Admin.Helpers\r\n@using ");
             
-            #line 12 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
+            #line 7 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\EditorTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RootNamespace));
             
             #line default
             #line hidden
-            this.Write(".Data.Contracts;\r\n\r\nnamespace ");
+            this.Write(".Data.Properties\r\n@Html.DropDownList(\"\", new SelectList(UIHelper.Get");
             
-            #line 14 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(RootNamespace));
+            #line 8 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\EditorTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Plural));
             
             #line default
             #line hidden
-            this.Write(".Data.Models\r\n{\r\n    public class ");
+            this.Write("(), \"Id\", \"Name\", ViewData.TemplateInfo.FormattedModelValue.ToString()), string.F" +
+                    "ormat(\"< {0} >\", Resources.Select");
             
-            #line 16 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
+            #line 8 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\EditorTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Singular));
             
             #line default
             #line hidden
-            this.Write(" : IEntity<int>\r\n    {\r\n");
-            
-            #line 18 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-    if(Model.CollectionModel != null && Model.CollectionModel.Any()) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        public ");
-            
-            #line 21 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Singular));
-            
-            #line default
-            #line hidden
-            this.Write("()\r\n        {\r\n");
-            
-            #line 23 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-		foreach(Model.ModelInfo model in Model.CollectionModel) {
-
-            
-            #line default
-            #line hidden
-            this.Write("            this.");
-            
-            #line 26 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(model.Plural));
-            
-            #line default
-            #line hidden
-            this.Write(" = new List<");
-            
-            #line 26 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(model.Singular));
-            
-            #line default
-            #line hidden
-            this.Write(">();\r\n");
-            
-            #line 27 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-
-            
-            #line default
-            #line hidden
-            this.Write("        }\r\n\r\n");
-            
-            #line 32 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-	}
-
-            
-            #line default
-            #line hidden
-            this.Write("        [ScaffoldColumn(false)]\r\n        public int Id { get; set; }\r\n\r\n");
-            
-            #line 38 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-    foreach(Model.FieldInfo field in Model.Fields) {
-        if(field.IncludeList == "true" && !string.IsNullOrEmpty(field.FriendlyName)) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [IncludeList(\"");
-            
-            #line 42 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FriendlyName));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n");
-            
-            #line 43 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-        else if(field.IncludeList == "true") {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [IncludeList()]\r\n");
-            
-            #line 48 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-        if(field.IncludeForm == "false") {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [ScaffoldColumn(false)]\r\n");
-            
-            #line 53 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-        if(!string.IsNullOrEmpty(field.FriendlyName)) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [Display(Name = \"");
-            
-            #line 57 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FriendlyName));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n");
-            
-            #line 58 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-        if(!string.IsNullOrEmpty(field.FkSingular)) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [UIHint(\"_");
-            
-            #line 62 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n");
-            
-            #line 63 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-
-            
-            #line default
-            #line hidden
-            this.Write("        public ");
-            
-            #line 66 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.Type));
-            
-            #line default
-            #line hidden
-            this.Write(" ");
-            
-            #line 66 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
-            
-            #line default
-            #line hidden
-            this.Write(" { get; set; }\r\n\r\n");
-            
-            #line 68 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        if(!string.IsNullOrEmpty(field.FkSingular)) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [ScaffoldColumn(false)]\r\n        [IncludeList(\"");
-            
-            #line 72 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n        public string ");
-            
-            #line 73 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write("Name\r\n        {\r\n            get\r\n            {\r\n                if (this.");
-            
-            #line 77 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write(" == null)\r\n                    return String.Empty;\r\n\r\n                return str" +
-                    "ing.Format(\"{0}\", this.");
-            
-            #line 80 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write(".Name);\r\n            }\r\n        }\r\n\r\n        [ScaffoldColumn(false)]\r\n        [Sc" +
-                    "riptIgnore(ApplyToOverrides = true)]\r\n        [XmlIgnore]\r\n        public virtua" +
-                    "l ");
-            
-            #line 87 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write(" ");
-            
-            #line 87 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(field.FkSingular));
-            
-            #line default
-            #line hidden
-            this.Write(" { get; set; }\r\n\r\n");
-            
-            #line 89 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-    }
-    if(Model.CollectionModel != null && Model.CollectionModel.Any()) {
-		foreach(Model.ModelInfo model in Model.CollectionModel) {
-
-            
-            #line default
-            #line hidden
-            this.Write("        [ScaffoldColumn(false)]\r\n        [ScriptIgnore(ApplyToOverrides = true)]\r" +
-                    "\n        [XmlIgnore]\r\n        public virtual ICollection<");
-            
-            #line 98 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(model.Singular));
-            
-            #line default
-            #line hidden
-            this.Write("> ");
-            
-            #line 98 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(model.Plural));
-            
-            #line default
-            #line hidden
-            this.Write(" { get; set; }\r\n\r\n");
-            
-            #line 100 "C:\Projects\Stolarus2\Stolarus2.T4\Templates\ModelTemplate.tt"
-
-        }
-    }
-
-            
-            #line default
-            #line hidden
-            this.Write("    }\r\n}");
+            this.Write("), new { @class = \"form-control\" })");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -312,7 +69,7 @@ namespace Stolarus2.T4.Templates
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ModelTemplateBase
+    public class EditorTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

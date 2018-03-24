@@ -41,11 +41,11 @@ namespace Stolarus2.T4
                 string modelContent = modelTemplate.TransformText();
                 File.WriteAllText(Path.Combine(dataProjectDir, "Models", model.Singular + ".cs"), modelContent);
 
-                MappingTemplate mapTemplate = new MappingTemplate();
-                mapTemplate.Model = model;
-                mapTemplate.RootNamespace = databaseInfo.RootNamespace;
-                string mapContent = mapTemplate.TransformText();
-                File.WriteAllText(Path.Combine(dataProjectDir, "Models\\Mapping", model.Singular + "Map.cs"), mapContent);
+                //MappingTemplate mapTemplate = new MappingTemplate();
+                //mapTemplate.Model = model;
+                //mapTemplate.RootNamespace = databaseInfo.RootNamespace;
+                //string mapContent = mapTemplate.TransformText();
+                //File.WriteAllText(Path.Combine(dataProjectDir, "Models\\Mapping", model.Singular + "Map.cs"), mapContent);
 
                 //RepositoryTemplate repositoryTemplate = new RepositoryTemplate();
                 //repositoryTemplate.Model = model;
@@ -72,6 +72,12 @@ namespace Stolarus2.T4
                 //controllerTemplate.RootNamespace = databaseInfo.RootNamespace;
                 //string controllerContent = controllerTemplate.TransformText();
                 //File.WriteAllText(Path.Combine(webProjectDir, "Controllers", model.Plural + "Controller.cs"), controllerContent);
+
+                //EditorTemplate editorTemplate = new EditorTemplate();
+                //editorTemplate.Model = model;
+                //editorTemplate.RootNamespace = databaseInfo.RootNamespace;
+                //string editorContent = editorTemplate.TransformText();
+                //File.WriteAllText(Path.Combine(webProjectDir, "Views\\Shared\\EditorTemplates", "_" + model.Singular + ".cshtml"), editorContent);
 
                 ////client web project
 

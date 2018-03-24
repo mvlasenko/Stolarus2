@@ -25,6 +25,7 @@ namespace Stolarus2.Data.Models
 
         [IncludeList("Image")]
         [Display(Name = "Image")]
+        [UIHint("_Image")]
         public string ImageURL { get; set; }
 
         [IncludeList("Created")]

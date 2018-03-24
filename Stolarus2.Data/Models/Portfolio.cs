@@ -19,6 +19,7 @@ namespace Stolarus2.Data.Models
         public int Id { get; set; }
 
         [Display(Name = "Portfolio Type")]
+        [UIHint("_PortfolioType")]
         public int? PortfolioTypeId { get; set; }
 
         [ScaffoldColumn(false)]
@@ -46,6 +47,7 @@ namespace Stolarus2.Data.Models
 
         [IncludeList("Image")]
         [Display(Name = "Image")]
+        [UIHint("_Image")]
         public string ImageURL { get; set; }
 
         [IncludeList("Created")]

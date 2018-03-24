@@ -1,0 +1,3 @@
+@using Stolarus2.Admin.Helpers
+@using Stolarus2.Data.Properties
+@Html.DropDownList("", new SelectList(UIHelper.GetQuotes(), "Id", "Name", ViewData.TemplateInfo.FormattedModelValue.ToString()), string.Format("< {0} >", Resources.SelectQuote), new { @class = "form-control" })

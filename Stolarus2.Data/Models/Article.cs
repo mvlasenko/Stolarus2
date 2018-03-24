@@ -14,6 +14,7 @@ namespace Stolarus2.Data.Models
         public int Id { get; set; }
 
         [Display(Name = "Category")]
+        [UIHint("_ArticleCategory")]
         public int? ArticleCategoryId { get; set; }
 
         [ScaffoldColumn(false)]
@@ -39,6 +40,7 @@ namespace Stolarus2.Data.Models
 
         [IncludeList("Image")]
         [Display(Name = "Image")]
+        [UIHint("_Image")]
         public string ImageURL { get; set; }
 
         public string Description { get; set; }
