@@ -21,10 +21,10 @@
 
         <thead>
             <tr>
-            @foreach (string propName in ViewBag.ListFieldHeaders)
-            {
-                <th>@propName</th>
-            }
+                @foreach (string propName in ViewBag.ListFieldHeaders)
+                {
+                    <th>@propName</th>
+                }
                 <th></th>
             </tr>
         </thead>
@@ -53,9 +53,15 @@
 
 @section scripts {
 
+    @Styles.Render("~/Content/datetimepicker")
+    @Scripts.Render("~/bundles/datetimepicker")
+
+    @Styles.Render("~/Content/dropzone")
+    @Scripts.Render("~/bundles/dropzone")
+
     @Scripts.Render("~/bundles/jqueryval")
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
         function InitModal() {
             $('.edit-item').click(function() {
@@ -100,7 +106,7 @@
                             currentPageIndex = pageIndex;
                             InitPager(currentPageIndex);
                         }
-                        
+
                         RefreshGrid(currentPageIndex);
 
                     });
@@ -202,5 +208,5 @@
             RefreshGrid(currentPageIndex);
         });
 
-</script>
+    </script>
 }

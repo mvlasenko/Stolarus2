@@ -1,1 +1,13 @@
-﻿@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, new { @class = "input-xxlarge form-control" })
+﻿<div id="imageDrop" class="dropzone"></div>
+
+<script>
+
+    Dropzone.options.dropzoneForm = {
+        paramName: "file",
+        maxFiles: 1,
+        acceptedFiles: "image/*"
+    };
+
+    $("div#imageDrop").dropzone({ url: "/Sliders/FileUpload" });
+
+</script>
