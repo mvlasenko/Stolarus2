@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 using Stolarus2.Admin.Attributes;
@@ -43,12 +43,15 @@ namespace Stolarus2.Data.Models
         [UIHint("_Image")]
         public string ImageURL { get; set; }
 
+        [UIHint("MultilineText")]
         public string Description { get; set; }
 
+        [UIHint("RichText")]
         public string Body { get; set; }
 
         [IncludeList("Created")]
         [Display(Name = "Created")]
+        [HiddenInput(DisplayValue = false)]
         public DateTime CreatedDateTime { get; set; }
 
         [IncludeList()]

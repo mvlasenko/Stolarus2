@@ -1,9 +1,7 @@
+using System;
+using System.Web.Mvc;
 using Stolarus2.Data.Contracts;
 using Stolarus2.Data.Models;
-using System;
-using System.IO;
-using System.Web;
-using System.Web.Mvc;
 
 namespace Stolarus2.Admin.Controllers
 {
@@ -16,34 +14,10 @@ namespace Stolarus2.Admin.Controllers
             this.repository = repository;
         }
 
-        [HttpPost]
-        public ActionResult FileUpload(HttpPostedFileBase file)
+        public override ActionResult CreatePartial(Slider entity)
         {
-            try
-            {
-                var memStream = new MemoryStream();
-                file.InputStream.CopyTo(memStream);
-
-                byte[] fileData = memStream.ToArray();
-
-                //save file to database using fictitious repository
-                //var repo = new FictitiousRepository();
-                //repo.SaveFile(file.FileName, fileData);
-            }
-            catch (Exception exception)
-            {
-                return Json(new
-                {
-                    success = false,
-                    response = exception.Message
-                });
-            }
-
-            return Json(new
-            {
-                success = true,
-                response = "File uploaded."
-            });
+            entity.CreatedDateTime = DateTime.Now;
+            return base.CreatePartial(entity);
         }
     }
 }

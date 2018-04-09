@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Script.Serialization;
-using System.Xml.Serialization;
+using System.Web.Mvc;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
 
@@ -28,6 +26,7 @@ namespace Stolarus2.Data.Models
 
         [IncludeList("Created")]
         [Display(Name = "Created")]
+        [HiddenInput(DisplayValue = false)]
         public DateTime CreatedDateTime { get; set; }
 
         [IncludeList()]

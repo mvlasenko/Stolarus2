@@ -1,13 +1,41 @@
-﻿<div id="imageDrop" class="dropzone"></div>
+﻿@{
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    var name = ViewData.ModelMetadata.PropertyName;
+    var val = ViewData.ModelMetadata.Model;
+}
+<div id="imageDrop" class="dropzone"></div>
+@Html.Hidden("", val)
 
 <script>
 
-    Dropzone.options.dropzoneForm = {
+    Dropzone.options.imageDrop = {
         paramName: "file",
         maxFiles: 1,
-        acceptedFiles: "image/*"
+        acceptedFiles: "image/*",
+
+        accept: function (file) {
+            console.log(file)
+            $("#@name").val(file.name);
+        },
+
+        init: function () {
+            if ($("#@name").val()) {
+                var mockFile = { name: "@val", size: 12345 };
+                this.emit("addedfile", mockFile);
+                this.createThumbnailFromUrl(mockFile, "/img/@val");
+                this.files[0] = mockFile;
+            }
+
+            this.on("addedfile", function () {
+                if (this.files[1] != null) {
+                    this.removeFile(this.files[0]);
+                }
+            });
+        }
     };
 
-    $("div#imageDrop").dropzone({ url: "/Sliders/FileUpload" });
+    $("div#imageDrop").dropzone({
+        url: "/admin/@controller/FileUpload"
+    })
 
 </script>

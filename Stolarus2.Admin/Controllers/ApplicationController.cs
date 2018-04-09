@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
@@ -193,6 +195,39 @@ namespace Stolarus2.Admin.Controllers
 
             var list = repository.GetPagedList(filter);
             return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult FileUpload(HttpPostedFileBase file)
+        {
+            try
+            {
+                string fileName = file.FileName;
+                string fileRoot = System.Configuration.ConfigurationManager.AppSettings["WebsiteRoot"];
+                string filePath = Path.Combine(fileRoot, "img", fileName);
+
+                var memStream = new MemoryStream();
+                file.InputStream.CopyTo(memStream);
+
+                byte[] fileData = memStream.ToArray();
+
+                //save file to file system
+                System.IO.File.WriteAllBytes(filePath, fileData);
+            }
+            catch (Exception exception)
+            {
+                return Json(new
+                {
+                    success = false,
+                    response = exception.Message
+                });
+            }
+
+            return Json(new
+            {
+                success = true,
+                response = "File uploaded."
+            });
         }
 
         #region helpers
