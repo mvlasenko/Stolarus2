@@ -18,7 +18,7 @@ namespace Stolarus2.Data.Models
         public int? ArticleCategoryId { get; set; }
 
         [ScaffoldColumn(false)]
-        [IncludeList("ArticleCategory")]
+        [IncludeList("Category")]
         public string ArticleCategoryName
         {
             get
@@ -46,7 +46,7 @@ namespace Stolarus2.Data.Models
         [UIHint("MultilineText")]
         public string Description { get; set; }
 
-        [UIHint("RichText")]
+        [UIHint("MultilineText")]
         public string Body { get; set; }
 
         [IncludeList("Created")]
@@ -54,7 +54,7 @@ namespace Stolarus2.Data.Models
         [HiddenInput(DisplayValue = false)]
         public DateTime CreatedDateTime { get; set; }
 
-        [IncludeList()]
+        [IncludeList("")]
         [ScaffoldColumn(false)]
         public int? SeqID { get; set; }
 

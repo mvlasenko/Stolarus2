@@ -22,6 +22,7 @@ namespace Stolarus2.Data.Models
         [UIHint("_Image")]
         public string ImageURL { get; set; }
 
+        [UIHint("MultilineText")]
         public string Description { get; set; }
 
         [IncludeList("Created")]
@@ -29,7 +30,7 @@ namespace Stolarus2.Data.Models
         [HiddenInput(DisplayValue = false)]
         public DateTime CreatedDateTime { get; set; }
 
-        [IncludeList()]
+        [IncludeList("")]
         [ScaffoldColumn(false)]
         public int? SeqID { get; set; }
 

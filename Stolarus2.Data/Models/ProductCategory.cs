@@ -22,6 +22,7 @@ namespace Stolarus2.Data.Models
         [IncludeList()]
         public string Name { get; set; }
 
+        [UIHint("MultilineText")]
         public string Description { get; set; }
 
         [IncludeList("Image")]
@@ -34,7 +35,7 @@ namespace Stolarus2.Data.Models
         [HiddenInput(DisplayValue = false)]
         public DateTime CreatedDateTime { get; set; }
 
-        [IncludeList()]
+        [IncludeList("")]
         [ScaffoldColumn(false)]
         public int? SeqID { get; set; }
 

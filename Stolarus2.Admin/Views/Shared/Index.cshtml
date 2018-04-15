@@ -61,7 +61,7 @@
 
     @Scripts.Render("~/bundles/jqueryval")
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         function InitModal() {
             $('.edit-item').click(function() {
@@ -151,7 +151,9 @@
 
                     @foreach (string propName in ViewBag.ListFields)
                     {
-                        @Html.Raw("row += '<td>' + (item." + propName + " || '') + '</td>';");
+                        @Html.Raw("var val = item." + propName + " || '';");
+                        @Html.Raw("if(val.indexOf('Date') > -1) val = (new Date(parseInt(val.substr(6)))).toLocaleString();");
+                        @Html.Raw("row += '<td>' + val + '</td>';");
                     }
                         row += "<td align='right'><button class='btn btn-primary edit-item' data-id='" + item.Id + "'>@Resources.Edit</button> <button class='btn btn-primary delete-item' data-id='" + item.Id + "'>@Resources.Delete</button></td>";
                         row += "</tr>";
@@ -208,5 +210,5 @@
             RefreshGrid(currentPageIndex);
         });
 
-    </script>
+</script>
 }

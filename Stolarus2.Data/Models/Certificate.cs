@@ -21,7 +21,7 @@ namespace Stolarus2.Data.Models
         [IncludeList()]
         public string Name { get; set; }
 
-        [IncludeList()]
+        [IncludeList("")]
         [ScaffoldColumn(false)]
         public int? SeqID { get; set; }
 

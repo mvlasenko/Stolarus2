@@ -1,0 +1,7 @@
+﻿@Html.TextArea("", Html.Raw(HttpUtility.HtmlDecode(ViewData.TemplateInfo.FormattedModelValue.ToString())).ToString())
+
+@Scripts.Render("~/bundles/ckeditor")
+
+<script>
+    CKEDITOR.replace('@ViewData.ModelMetadata.PropertyName');
+</script>

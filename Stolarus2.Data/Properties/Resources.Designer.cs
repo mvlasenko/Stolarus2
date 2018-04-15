@@ -88,7 +88,7 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ArticleCategories.
+        ///   Looks up a localized string similar to Article Categories.
         /// </summary>
         public static string ArticleCategories {
             get {
