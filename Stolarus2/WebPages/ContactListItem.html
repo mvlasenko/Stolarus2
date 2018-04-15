@@ -1,0 +1,15 @@
+
+<!-- Contacts -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ contact.ImagePath }}" alt="{{ contact.Title }}">
+    </div>
+    <p>{{ contact.Description }}</p>
+</div>
+<!-- End Contacts -->
+
+<div class="row" data-ng-controller="ContactsController as cc">
+
+    <div data-ng-repeat="contact in cc.contacts" data-ng-include="'/WebPages/ContactListItem.html'"></div>
+
+</div>

@@ -1,4 +1,4 @@
-var ProductsController = function ($scope, $http, $timeout) {
+var ContactsController = function ($scope, $http, $timeout) {
 
     var baseUrl = "/api";
 
@@ -7,14 +7,14 @@ var ProductsController = function ($scope, $http, $timeout) {
     vm.isBusy = false;
 
     function init() {
-        getProducts();
+        getContacts();
     }
 
-    function getProducts() {
+    function getContacts() {
 
         vm.isBusy = true;
 
-        var url = baseUrl + "/Products";
+        var url = baseUrl + "/Contacts";
 
         $http({
             method: 'GET',
@@ -22,11 +22,11 @@ var ProductsController = function ($scope, $http, $timeout) {
         }).then(
             function (response) {
 
-                var products = response.data;
+                var contacts = response.data;
 
-                console.log("Data received > " + products.length);
+                console.log("Data received > " + contacts.length);
 
-                vm.products = products;
+                vm.contacts = contacts;
 
                 vm.isBusy = false;
 
@@ -47,4 +47,4 @@ var ProductsController = function ($scope, $http, $timeout) {
     init();
 }
 
-ProductsController.$inject = ['$scope', '$http', '$timeout'];
+ContactsController.$inject = ['$scope', '$http', '$timeout'];

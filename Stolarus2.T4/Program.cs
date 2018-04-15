@@ -33,13 +33,26 @@ namespace Stolarus2.T4
                 //preparing FK collection names
                 model.CollectionModel = databaseInfo.Models.Where(m => m.Fields.Any(f => f.FkSingular == model.Singular)).ToList();
 
+                //angular project
+
+                AngularControllerTemplate acTemplate = new AngularControllerTemplate();
+                acTemplate.Model = model;
+                string acContent = acTemplate.TransformText();
+                File.WriteAllText(Path.Combine(clientProjectDir, "Scripts\\modules\\stolarus\\controllers", model.Plural.ToLower() + ".js"), acContent);
+
+                AngularItemTemplate aiTemplate = new AngularItemTemplate();
+                aiTemplate.Model = model;
+                string aiContent = aiTemplate.TransformText();
+                File.WriteAllText(Path.Combine(clientProjectDir, "WebPages", model.Singular + "ListItem.html"), aiContent);
+
+
                 //data project
 
-                ModelTemplate modelTemplate = new ModelTemplate();
-                modelTemplate.Model = model;
-                modelTemplate.RootNamespace = databaseInfo.RootNamespace;
-                string modelContent = modelTemplate.TransformText();
-                File.WriteAllText(Path.Combine(dataProjectDir, "Models", model.Singular + ".cs"), modelContent);
+                //ModelTemplate modelTemplate = new ModelTemplate();
+                //modelTemplate.Model = model;
+                //modelTemplate.RootNamespace = databaseInfo.RootNamespace;
+                //string modelContent = modelTemplate.TransformText();
+                //File.WriteAllText(Path.Combine(dataProjectDir, "Models", model.Singular + ".cs"), modelContent);
 
                 //MappingTemplate mapTemplate = new MappingTemplate();
                 //mapTemplate.Model = model;

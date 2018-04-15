@@ -1,0 +1,55 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+var <#= Model.Plural #>Controller = function ($scope, $http, $timeout) {
+
+    var baseUrl = "/api";
+
+    var vm = this;
+    vm.Id = Math.random();
+    vm.isBusy = false;
+
+    function init() {
+        get<#= Model.Plural #>();
+    }
+
+    function get<#= Model.Plural #>() {
+
+        vm.isBusy = true;
+
+        var url = baseUrl + "/<#= Model.Plural #>";
+
+        $http({
+            method: 'GET',
+            url: url
+        }).then(
+            function (response) {
+
+                var <#= Model.Plural.ToLower() #> = response.data;
+
+                console.log("Data received > " + <#= Model.Plural.ToLower() #>.length);
+
+                vm.<#= Model.Plural.ToLower() #> = <#= Model.Plural.ToLower() #>;
+
+                vm.isBusy = false;
+
+                $timeout(function () {
+                    $scope.$broadcast('data-received', vm.Id);
+                }, 0);
+
+            },
+            function (error) {
+
+                console.log(error, 'error');
+
+            });
+
+        console.log("Request sent to > " + url);
+    }
+
+    init();
+}
+
+<#= Model.Plural #>Controller.$inject = ['$scope', '$http', '$timeout'];

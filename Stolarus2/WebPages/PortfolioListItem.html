@@ -1,0 +1,15 @@
+
+<!-- Portfolios -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ portfolio.ImagePath }}" alt="{{ portfolio.Title }}">
+    </div>
+    <p>{{ portfolio.Description }}</p>
+</div>
+<!-- End Portfolios -->
+
+<div class="row" data-ng-controller="PortfoliosController as pc">
+
+    <div data-ng-repeat="portfolio in pc.portfolios" data-ng-include="'/WebPages/PortfolioListItem.html'"></div>
+
+</div>

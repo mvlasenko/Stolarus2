@@ -1,0 +1,15 @@
+
+<!-- Article -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ article.ImagePath }}" alt="{{ article.Title }}">
+    </div>
+    <p>{{ article.Description }}</p>
+</div>
+<!-- End Article -->
+
+<div class="row" data-ng-controller="ArticleController as ac">
+
+    <div data-ng-repeat="article in ac.article" data-ng-include="'/WebPages/ArticleListItem.html'"></div>
+
+</div>

@@ -1,0 +1,15 @@
+
+<!-- Quotes -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ quote.ImagePath }}" alt="{{ quote.Title }}">
+    </div>
+    <p>{{ quote.Description }}</p>
+</div>
+<!-- End Quotes -->
+
+<div class="row" data-ng-controller="QuotesController as qc">
+
+    <div data-ng-repeat="quote in qc.quotes" data-ng-include="'/WebPages/QuoteListItem.html'"></div>
+
+</div>

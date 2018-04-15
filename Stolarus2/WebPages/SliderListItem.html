@@ -1,0 +1,15 @@
+
+<!-- Sliders -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ slider.ImagePath }}" alt="{{ slider.Title }}">
+    </div>
+    <p>{{ slider.Description }}</p>
+</div>
+<!-- End Sliders -->
+
+<div class="row" data-ng-controller="SlidersController as sc">
+
+    <div data-ng-repeat="slider in sc.sliders" data-ng-include="'/WebPages/SliderListItem.html'"></div>
+
+</div>

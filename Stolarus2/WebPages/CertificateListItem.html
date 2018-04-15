@@ -1,0 +1,15 @@
+
+<!-- Certificates -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ certificate.ImagePath }}" alt="{{ certificate.Title }}">
+    </div>
+    <p>{{ certificate.Description }}</p>
+</div>
+<!-- End Certificates -->
+
+<div class="row" data-ng-controller="CertificatesController as cc">
+
+    <div data-ng-repeat="certificate in cc.certificates" data-ng-include="'/WebPages/CertificateListItem.html'"></div>
+
+</div>

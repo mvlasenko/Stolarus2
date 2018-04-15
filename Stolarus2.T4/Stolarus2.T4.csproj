@@ -42,6 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Templates\AngularControllerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AngularControllerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\AngularControllerTemplate.custom.cs" />
+    <Compile Include="Templates\AngularItemTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AngularItemTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\AngularItemTemplate.custom.cs" />
     <Compile Include="Templates\ApiControllerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +139,14 @@
   <ItemGroup>
     <Content Include="data.xml">
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\AngularControllerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AngularControllerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\AngularItemTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AngularItemTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Templates\ApiControllerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

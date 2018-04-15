@@ -1,0 +1,15 @@
+
+<!-- ProductCategories -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ productcategory.ImagePath }}" alt="{{ productcategory.Title }}">
+    </div>
+    <p>{{ productcategory.Description }}</p>
+</div>
+<!-- End ProductCategories -->
+
+<div class="row" data-ng-controller="ProductCategoriesController as pc">
+
+    <div data-ng-repeat="productcategory in pc.productcategories" data-ng-include="'/WebPages/ProductCategoryListItem.html'"></div>
+
+</div>

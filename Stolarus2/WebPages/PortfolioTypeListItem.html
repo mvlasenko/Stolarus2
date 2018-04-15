@@ -1,0 +1,15 @@
+
+<!-- PortfolioTypes -->
+<div class="col-sm-4 sm-margin-b-50">
+    <div class="margin-b-20">
+        <img class="img-responsive" src="{{ portfoliotype.ImagePath }}" alt="{{ portfoliotype.Title }}">
+    </div>
+    <p>{{ portfoliotype.Description }}</p>
+</div>
+<!-- End PortfolioTypes -->
+
+<div class="row" data-ng-controller="PortfolioTypesController as pc">
+
+    <div data-ng-repeat="portfoliotype in pc.portfoliotypes" data-ng-include="'/WebPages/PortfolioTypeListItem.html'"></div>
+
+</div>
