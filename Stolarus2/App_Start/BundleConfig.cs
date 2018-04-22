@@ -14,21 +14,20 @@ namespace Stolarus2
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular")
-                        .Include("~/Scripts/angular.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/article.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/articlecategories.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/certificates.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/contacts.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/portfoliodetails.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/portfolios.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/portfoliotypes.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/productcategories.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/products.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/quotes.js")
-                        .Include("~/Scripts/modules/stolarus/controllers/sliders.js")
-                        .Include("~/Scripts/modules/stolarus/app.js")
-                        );
+            //bundles.Add(new ScriptBundle("~/bundles/angular")
+            //            .Include("~/Scripts/angular.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/article.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/certificates.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/contacts.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/portfoliodetails.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/portfolios.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/portfoliotypes.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/productcategories.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/products.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/quotes.js")
+            //            .Include("~/Scripts/modules/stolarus/controllers/sliders.js")
+            //            .Include("~/Scripts/modules/stolarus/app.js")
+            //            );
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.

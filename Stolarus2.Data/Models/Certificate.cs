@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Script.Serialization;
-using System.Xml.Serialization;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
 

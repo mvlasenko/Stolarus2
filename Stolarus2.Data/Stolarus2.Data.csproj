@@ -73,7 +73,6 @@
   <ItemGroup>
     <Compile Include="Attributes\IncludeListAttribute.cs" />
     <Compile Include="Common\PagedCollection.cs" />
-    <Compile Include="Contracts\IArticleCategoriesRepository.cs" />
     <Compile Include="Contracts\IArticleRepository.cs" />
     <Compile Include="Contracts\ICertificatesRepository.cs" />
     <Compile Include="Contracts\IContactsRepository.cs" />
@@ -95,7 +94,6 @@
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Filters\Filter.cs" />
-    <Compile Include="Models\Mapping\ArticleCategoryMap.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
     <Compile Include="Models\Mapping\CertificateMap.cs" />
     <Compile Include="Models\Mapping\ContactMap.cs" />
@@ -120,7 +118,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Repository\ArticleCategoriesRepository.cs" />
     <Compile Include="Repository\ArticleRepository.cs" />
     <Compile Include="Repository\CertificatesRepository.cs" />
     <Compile Include="Repository\ContactsRepository.cs" />

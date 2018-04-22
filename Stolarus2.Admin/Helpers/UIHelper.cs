@@ -48,11 +48,6 @@ namespace Stolarus2.Admin.Helpers
             IArticleRepository repository = DependencyResolver.Current.GetService<IArticleRepository>();
             return repository.GetList().ToList();
         }
-        public static List<ArticleCategory> GetArticleCategories()
-        {
-            IArticleCategoriesRepository repository = DependencyResolver.Current.GetService<IArticleCategoriesRepository>();
-            return repository.GetList().ToList();
-        }
         public static List<Quote> GetQuotes()
         {
             IQuotesRepository repository = DependencyResolver.Current.GetService<IQuotesRepository>();

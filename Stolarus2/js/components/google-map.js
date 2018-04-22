@@ -27,9 +27,9 @@ var GoogleMap = function() {
             }];
 
             // Create a map object and specify the DOM element for display.
-            var NewYork = new google.maps.LatLng(41.850, -73.961);
+            var NewYork = new google.maps.LatLng(48.370, 22.171);
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: NewYork,
+                center: Uzhgorod,
                 styles: styleArray,
                 scrollwheel: false,
                 zoom: 6,
@@ -65,7 +65,7 @@ var GoogleMap = function() {
                     Math.floor(worldCoordinate.y * scale / TILE_SIZE));
 
                 return [
-                    '277 Bedford Avenue, <br> Brooklyn, NY 11211, <br> New York, USA'
+                    'Solarus'
                 ].join('<br>');
             }
 

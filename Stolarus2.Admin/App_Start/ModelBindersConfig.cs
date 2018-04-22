@@ -16,7 +16,6 @@ namespace Stolarus2.Admin
             binders[typeof(IFilter<Portfolio, int>)] = new PortfoliosFilterModelBinder();
             binders[typeof(IFilter<PortfolioDetail, int>)] = new PortfolioDetailsFilterModelBinder();
             binders[typeof(IFilter<Article, int>)] = new ArticleFilterModelBinder();
-            binders[typeof(IFilter<ArticleCategory, int>)] = new ArticleCategoriesFilterModelBinder();
             binders[typeof(IFilter<Quote, int>)] = new QuotesFilterModelBinder();
             binders[typeof(IFilter<Contact, int>)] = new ContactsFilterModelBinder();
             binders[typeof(IFilter<Certificate, int>)] = new CertificatesFilterModelBinder();

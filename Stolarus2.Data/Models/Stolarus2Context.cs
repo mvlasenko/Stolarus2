@@ -20,7 +20,6 @@ namespace Stolarus2.Data.Models
             modelBuilder.Configurations.Add(new PortfolioMap());
             modelBuilder.Configurations.Add(new PortfolioDetailMap());
             modelBuilder.Configurations.Add(new ArticleMap());
-            modelBuilder.Configurations.Add(new ArticleCategoryMap());
             modelBuilder.Configurations.Add(new QuoteMap());
             modelBuilder.Configurations.Add(new ContactMap());
             modelBuilder.Configurations.Add(new CertificateMap());

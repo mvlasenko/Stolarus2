@@ -18,7 +18,6 @@ namespace Stolarus2.Admin
             container.RegisterType<IPortfoliosRepository, PortfoliosRepository>();
             container.RegisterType<IPortfolioDetailsRepository, PortfolioDetailsRepository>();
             container.RegisterType<IArticleRepository, ArticleRepository>();
-            container.RegisterType<IArticleCategoriesRepository, ArticleCategoriesRepository>();
             container.RegisterType<IQuotesRepository, QuotesRepository>();
             container.RegisterType<IContactsRepository, ContactsRepository>();
             container.RegisterType<ICertificatesRepository, CertificatesRepository>();

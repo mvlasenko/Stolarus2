@@ -231,4 +231,7 @@
   <data name="Certificates" xml:space="preserve">
     <value>Certificates</value>
   </data>
+  <data name="SelectTimeZone" xml:space="preserve">
+    <value>Select Time Zone</value>
+  </data>
 </root>

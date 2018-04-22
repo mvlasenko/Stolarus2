@@ -1,7 +1,6 @@
 ﻿var stolarus2App = angular.module('stolarus2App', []);
 
 stolarus2App.controller('ArticleController', ArticleController);
-stolarus2App.controller('ArticleCategoriesController', ArticleCategoriesController);
 stolarus2App.controller('CertificatesController', CertificatesController);
 stolarus2App.controller('ContactsController', ContactsController);
 stolarus2App.controller('PortfolioDetailsController', PortfolioDetailsController);

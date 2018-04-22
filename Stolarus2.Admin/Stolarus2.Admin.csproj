@@ -183,7 +183,6 @@
     <Compile Include="App_Start\UnityConfig.custom.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
-    <Compile Include="Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CertificatesController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
@@ -199,7 +198,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\UIHelper.cs" />
-    <Compile Include="ModelBinding\ArticleCategoriesFilterModelBinder.cs" />
     <Compile Include="ModelBinding\ArticleFilterModelBinder.cs" />
     <Compile Include="ModelBinding\CertificatesFilterModelBinder.cs" />
     <Compile Include="ModelBinding\ContactsFilterModelBinder.cs" />
@@ -340,6 +338,7 @@
     <Content Include="Scripts\ckeditor\package.json" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\styles.js" />
     <Content Include="Scripts\dropzone\basic.css" />
@@ -393,7 +392,6 @@
     <Content Include="Views\Shared\EditorTemplates\_TimeZone.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_ProductCategory.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Article.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\_ArticleCategory.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Certificate.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Contact.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Portfolio.cshtml" />
@@ -403,6 +401,7 @@
     <Content Include="Views\Shared\EditorTemplates\_Slider.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Image.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RichText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Enum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stolarus2.Data\Stolarus2.Data.csproj">

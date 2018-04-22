@@ -394,6 +394,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Time Zone.
+        /// </summary>
+        public static string SelectTimeZone {
+            get {
+                return ResourceManager.GetString("SelectTimeZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sliders.
         /// </summary>
         public static string Sliders {
