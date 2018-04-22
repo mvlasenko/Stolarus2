@@ -198,12 +198,17 @@ namespace Stolarus2.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult FileUpload(HttpPostedFileBase file)
+        public virtual ActionResult FileUpload(HttpPostedFileBase file)
         {
             try
             {
-                string fileName = file.FileName;
                 string fileRoot = System.Configuration.ConfigurationManager.AppSettings["WebsiteRoot"];
+
+                string dirPath = Path.Combine(fileRoot, "img", "Sliders");
+                if (!Directory.Exists(dirPath))
+                    Directory.CreateDirectory(dirPath);
+
+                string fileName = file.FileName;
                 string filePath = Path.Combine(fileRoot, "img", fileName);
 
                 var memStream = new MemoryStream();

@@ -16,7 +16,17 @@ namespace Stolarus2
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                         .Include("~/Scripts/angular.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/article.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/articlecategories.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/certificates.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/contacts.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/portfoliodetails.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/portfolios.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/portfoliotypes.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/productcategories.js")
                         .Include("~/Scripts/modules/stolarus/controllers/products.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/quotes.js")
+                        .Include("~/Scripts/modules/stolarus/controllers/sliders.js")
                         .Include("~/Scripts/modules/stolarus/app.js")
                         );
 

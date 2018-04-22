@@ -1,15 +1,29 @@
-
-<!-- Sliders -->
-<div class="col-sm-4 sm-margin-b-50">
-    <div class="margin-b-20">
-        <img class="img-responsive" src="{{ slider.ImagePath }}" alt="{{ slider.Title }}">
+<img class="img-responsive" src="/img/{{ slider.ImagePath }}" alt="{{ slider.Name }}">
+<div class="container">
+    <div class="carousel-centered">
+        <div class="margin-b-40">
+            <h1 class="carousel-title">{{ slider.Name }}</h1>
+        </div>
+        <a href="/#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
     </div>
-    <p>{{ slider.Description }}</p>
 </div>
-<!-- End Sliders -->
 
-<div class="row" data-ng-controller="SlidersController as sc">
+<!--========== SLIDER ==========-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-ng-controller="SlidersController as sc">
+    <div class="container">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" data-ng-repeat="slider in sc.getSliders()">
 
-    <div data-ng-repeat="slider in sc.sliders" data-ng-include="'/WebPages/SliderListItem.html'"></div>
+            <li data-target="#{{ slider.Id }}" data-slide-to="{{ slider.Id }}" ng-class="{'active': $first}"></li>
 
+        </ol>
+    </div>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" data-ng-repeat="slider in sc.getSliders()">
+
+        <div ng-class="{'item active': $first, 'item': !$first}" data-ng-repeat="slider in sc.sliders" data-ng-include="'/WebPages/SliderListItem.html'"></div>
+
+    </div>
 </div>
+<!--========== SLIDER ==========-->

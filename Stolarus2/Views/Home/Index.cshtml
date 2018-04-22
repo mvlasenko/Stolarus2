@@ -1,3 +1,47 @@
-﻿@{
+﻿@using Stolarus2.Data.Models
+@model Stolarus2.ViewModels.SinglePage
+
+@{
     ViewBag.Title = "Home Page";
 }
+
+<!--========== SLIDER ==========-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="container">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @{
+                int index = 0;
+            }
+            @foreach (Slider slider in Model.Sliders)
+            {
+                <li data-target="#@index" data-slide-to="@index" class="@(index == 0 ? "active" : "")"></li>
+                index++;
+            }
+        </ol>
+    </div>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        @{
+        index = 0;
+        }
+        @foreach (Slider slider in Model.Sliders)
+        {
+            <div class="@(index == 0 ? "item active" : "item")">
+                <img class="img-responsive" src="/img/@slider.ImageURL" alt="@slider.Name">
+                <div class="container">
+                    <div class="carousel-centered">
+                        <div class="margin-b-40">
+                            <h1 class="carousel-title">@slider.Name</h1>
+                        </div>
+                        <a href="@slider.ExternalURL" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                    </div>
+                </div>
+            </div>
+
+            index++;
+        }
+    </div>
+</div>
+<!--========== SLIDER ==========-->

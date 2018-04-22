@@ -8,34 +8,36 @@
 
 <script>
 
-    Dropzone.options.imageDrop = {
+    var options = Dropzone.options.imageDrop = {
+        url: '@Url.Action("FileUpload")',
         paramName: "file",
         maxFiles: 1,
         acceptedFiles: "image/*",
 
-        accept: function (file) {
-            console.log(file)
-            $("#@name").val(file.name);
-        },
+        init: function (file) {
 
-        init: function () {
+            imageDrop = this;
+
             if ($("#@name").val()) {
                 var mockFile = { name: "@val", size: 12345 };
                 this.emit("addedfile", mockFile);
                 this.createThumbnailFromUrl(mockFile, "/img/@val");
                 this.files[0] = mockFile;
-            }
+            };
 
-            this.on("addedfile", function () {
+            this.on("addedfile", function (files) {
                 if (this.files[1] != null) {
                     this.removeFile(this.files[0]);
                 }
             });
+        },
+
+        success: function (file) {
+            $("#@name").val(file.name);
         }
+
     };
 
-    $("div#imageDrop").dropzone({
-        url: "/admin/@controller/FileUpload"
-    })
+    $("div#imageDrop").dropzone(options);
 
 </script>
