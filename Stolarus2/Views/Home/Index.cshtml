@@ -53,29 +53,38 @@
         <div class="masonry-grid row">
             <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
 
-            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 sm-margin-b-30">
-                <div class="margin-b-60">
-                    <h2>@Model.About[0].Name</h2>
-                    <p>@Model.About[0].Description</p>
+            @if (@Model.About.Count > 0)
+            {
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 sm-margin-b-30">
+                    <div class="margin-b-60">
+                        <h2>@Model.About[0].Name</h2>
+                        <p>@Model.About[0].Description</p>
+                    </div>
+                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[0].ImageURL" alt="@Model.About[0].Name" data-wow-duration=".3" data-wow-delay=".2s">
                 </div>
-                <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[0].ImageURL" alt="@Model.About[0].Name" data-wow-duration=".3" data-wow-delay=".2s">
-            </div>
+            }
 
-            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
-                <div class="margin-b-60">
-                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[1].ImageURL" alt="@Model.About[1].Name" data-wow-duration=".3" data-wow-delay=".3s">
+            @if (@Model.About.Count > 1)
+            {
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <div class="margin-b-60">
+                        <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[1].ImageURL" alt="@Model.About[1].Name" data-wow-duration=".3" data-wow-delay=".3s">
+                    </div>
+                    <h2>@Model.About[1].Name</h2>
+                    <p>@Model.About[1].Description</p>
                 </div>
-                <h2>@Model.About[1].Name</h2>
-                <p>@Model.About[1].Description</p>
-            </div>
+            }
 
-            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
-                <div class="margin-t-60 margin-b-60">
-                    <h2>@Model.About[2].Name</h2>
-                    <p>@Model.About[2].Description</p>
+            @if (@Model.About.Count > 2)
+            {
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <div class="margin-t-60 margin-b-60">
+                        <h2>@Model.About[2].Name</h2>
+                        <p>@Model.About[2].Description</p>
+                    </div>
+                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[2].ImageURL" alt="@Model.About[2].Name" data-wow-duration=".3" data-wow-delay=".4s">
                 </div>
-                <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[2].ImageURL" alt="@Model.About[2].Name" data-wow-duration=".3" data-wow-delay=".4s">
-            </div>
+            }
 
         </div>
         <!-- End Masonry Grid -->
@@ -108,7 +117,6 @@
                     <a class="link" href="/@cat.Name">Read More</a>
                 </div>
                 <!-- End Latest Products -->
-
             }
 
         </div>
@@ -170,8 +178,6 @@
     </div>
 </div>
 <!-- End Work -->
-
-
 <!-- Contact -->
 <div id="contact">
     <!-- Contact List -->
