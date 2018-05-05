@@ -29,7 +29,7 @@
         @foreach (Slider slider in Model.Sliders)
         {
             <div class="@(index == 0 ? "item active" : "item")">
-                <img class="img-responsive" src="/img/@slider.ImageURL" alt="@slider.Name">
+                <img class="img-responsive" src="/img/@slider.ImageID" alt="@slider.Name">
                 <div class="container">
                     <div class="carousel-centered">
                         <div class="margin-b-40">
@@ -60,7 +60,7 @@
                         <h2>@Model.About[0].Name</h2>
                         <p>@Model.About[0].Description</p>
                     </div>
-                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[0].ImageURL" alt="@Model.About[0].Name" data-wow-duration=".3" data-wow-delay=".2s">
+                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[0].ImageID" alt="@Model.About[0].Name" data-wow-duration=".3" data-wow-delay=".2s">
                 </div>
             }
 
@@ -68,7 +68,7 @@
             {
                 <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
                     <div class="margin-b-60">
-                        <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[1].ImageURL" alt="@Model.About[1].Name" data-wow-duration=".3" data-wow-delay=".3s">
+                        <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[1].ImageID" alt="@Model.About[1].Name" data-wow-duration=".3" data-wow-delay=".3s">
                     </div>
                     <h2>@Model.About[1].Name</h2>
                     <p>@Model.About[1].Description</p>
@@ -82,7 +82,7 @@
                         <h2>@Model.About[2].Name</h2>
                         <p>@Model.About[2].Description</p>
                     </div>
-                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[2].ImageURL" alt="@Model.About[2].Name" data-wow-duration=".3" data-wow-delay=".4s">
+                    <img class="full-width img-responsive wow fadeInUp" src="/img/@Model.About[2].ImageID" alt="@Model.About[2].Name" data-wow-duration=".3" data-wow-delay=".4s">
                 </div>
             }
 
@@ -110,7 +110,7 @@
                 <!-- Latest Products -->
                 <div class="col-sm-4 sm-margin-b-50">
                     <div class="margin-b-20">
-                        <img class="img-responsive" src="img/@cat.ImageURL" alt="@cat.Name">
+                        <img class="img-responsive" src="img/@cat.ImageID" alt="@cat.Name">
                     </div>
                     <h4><a href="#">@cat.Name</a></h4>
                     <p>@cat.Description</p>
@@ -151,7 +151,7 @@
                             <!-- Work -->
                             <div class="work work-popup-trigger">
                                 <div class="work-overlay">
-                                    <img class="full-width img-responsive" src="/img/@por.ImageURL" alt="@por.Name">
+                                    <img class="full-width img-responsive" src="/img/@por.ImageID" alt="@por.Name">
                                 </div>
                             </div>
                             <!-- End Work -->
@@ -163,7 +163,7 @@
                             <!-- Work -->
                             <div class="work work-popup-trigger">
                                 <div class="work-overlay">
-                                    <img class="full-width img-responsive" src="/img/@por.ImageURL" alt="@por.Name">
+                                    <img class="full-width img-responsive" src="/img/@por.ImageID" alt="@por.Name">
                                 </div>
                             </div>
                             <!-- End Work -->

@@ -11,7 +11,7 @@ namespace Stolarus2.Data.Models.Mapping
 
             // Properties
 
-            this.Property(t => t.ImageURL).HasMaxLength(255);
+            this.Property(t => t.ImageID).HasMaxLength(255);
 
             this.Property(t => t.Name).HasMaxLength(255);
 
@@ -25,7 +25,7 @@ namespace Stolarus2.Data.Models.Mapping
 
             this.ToTable("Sliders");
             this.Property(t => t.Id).HasColumnName("Id");
-            this.Property(t => t.ImageURL).HasColumnName("ImageURL");
+            this.Property(t => t.ImageID).HasColumnName("ImageID");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.ExternalURL).HasColumnName("ExternalURL");
             this.Property(t => t.CreatedDateTime).HasColumnName("CreatedDateTime");

@@ -17,7 +17,7 @@ namespace Stolarus2.Data.Models.Mapping
 
             this.Property(t => t.ShortDescription).HasMaxLength(4000);
 
-            this.Property(t => t.ImageURL).HasMaxLength(255);
+            this.Property(t => t.ImageID).HasMaxLength(255);
 
             this.Property(t => t.Price);
 
@@ -36,7 +36,7 @@ namespace Stolarus2.Data.Models.Mapping
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.ShortDescription).HasColumnName("ShortDescription");
-            this.Property(t => t.ImageURL).HasColumnName("ImageURL");
+            this.Property(t => t.ImageID).HasColumnName("ImageID");
             this.Property(t => t.Price).HasColumnName("Price");
             this.Property(t => t.Code).HasColumnName("Code");
             this.Property(t => t.CategoryId).HasColumnName("CategoryId");

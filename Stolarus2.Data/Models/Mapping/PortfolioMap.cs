@@ -17,7 +17,7 @@ namespace Stolarus2.Data.Models.Mapping
 
             this.Property(t => t.Description).HasMaxLength(1023);
 
-            this.Property(t => t.ImageURL).HasMaxLength(255);
+            this.Property(t => t.ImageID).HasMaxLength(255);
 
             this.Property(t => t.CreatedDateTime).IsRequired();
 
@@ -30,7 +30,7 @@ namespace Stolarus2.Data.Models.Mapping
             this.Property(t => t.PortfolioTypeId).HasColumnName("PortfolioTypeId");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
-            this.Property(t => t.ImageURL).HasColumnName("ImageURL");
+            this.Property(t => t.ImageID).HasColumnName("ImageID");
             this.Property(t => t.CreatedDateTime).HasColumnName("CreatedDateTime");
             this.Property(t => t.SeqID).HasColumnName("SeqID");
 
