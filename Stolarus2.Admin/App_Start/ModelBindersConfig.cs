@@ -1,3 +1,4 @@
+using System;
 using System.Web.Mvc;
 using Stolarus2.Admin.ModelBinding;
 using Stolarus2.Data.Contracts;
@@ -19,6 +20,7 @@ namespace Stolarus2.Admin
             binders[typeof(IFilter<Quote, int>)] = new QuotesFilterModelBinder();
             binders[typeof(IFilter<Contact, int>)] = new ContactsFilterModelBinder();
             binders[typeof(IFilter<Certificate, int>)] = new CertificatesFilterModelBinder();
+            binders[typeof(IFilter<Image, Guid>)] = new ImagesFilterModelBinder();
         }
     }
 }

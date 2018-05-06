@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -24,7 +25,7 @@ namespace Stolarus2.Admin.Controllers
         {
             IPagedCollection model = this.LoadCollection(filter);
 
-            ViewBag.ListFields = typeof(T).GetProperties().Where(prop => prop.GetCustomAttributes().Any(x => x is IncludeListAttribute)).Select(prop => prop.Name).ToList();
+            ViewBag.ListFields = typeof(T).GetProperties().Where(prop => prop.GetCustomAttributes().Any(x => x is IncludeListAttribute)).Select(prop => new ViewModels.FieldInfo { Name = prop.Name, Type = prop.PropertyType.Name, UIHint = prop.GetCustomAttributes().Any(x => x is UIHintAttribute) ? ((UIHintAttribute)prop.GetCustomAttributes().First(x => x is UIHintAttribute)).UIHint : "" }).ToList();
             ViewBag.ListFieldHeaders = typeof(T).GetProperties().Where(prop => prop.GetCustomAttributes().Any(x => x is IncludeListAttribute)).Select(prop => ((IncludeListAttribute)prop.GetCustomAttributes().First(x => x is IncludeListAttribute)).IncludeListTitle ?? prop.Name).ToList();
 
             return View("Index", model);
@@ -202,22 +203,23 @@ namespace Stolarus2.Admin.Controllers
         {
             try
             {
-                string fileRoot = System.Configuration.ConfigurationManager.AppSettings["WebsiteRoot"];
-
-                string dirPath = Path.Combine(fileRoot, "img", "Sliders");
-                if (!Directory.Exists(dirPath))
-                    Directory.CreateDirectory(dirPath);
-
-                string fileName = file.FileName;
-                string filePath = Path.Combine(fileRoot, "img", fileName);
+                IImagesRepository imagesRepository = DependencyResolver.Current.GetService<IImagesRepository>();
 
                 var memStream = new MemoryStream();
                 file.InputStream.CopyTo(memStream);
 
                 byte[] fileData = memStream.ToArray();
 
-                //save file to file system
-                System.IO.File.WriteAllBytes(filePath, fileData);
+                //save file database
+                Data.Models.Image newImage = imagesRepository.Insert(new Data.Models.Image { Binary = fileData, Name = file.FileName, CreatedDateTime = DateTime.Now });
+
+                return Json(new
+                {
+                    success = true,
+                    response = "File uploaded.",
+                    id = newImage.Id.ToString(),
+                    fileName = file.FileName
+                });
             }
             catch (Exception exception)
             {
@@ -227,12 +229,6 @@ namespace Stolarus2.Admin.Controllers
                     response = exception.Message
                 });
             }
-
-            return Json(new
-            {
-                success = true,
-                response = "File uploaded."
-            });
         }
 
         #region helpers

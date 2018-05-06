@@ -150,11 +150,20 @@
                         var row = "<tr>";
 
                     var val = '';
-                    @foreach (string propName in ViewBag.ListFields)
+                    @foreach (Stolarus2.Admin.ViewModels.FieldInfo prop in ViewBag.ListFields)
                     {
-                        @Html.Raw("val = item." + propName + " || '';\n");
-                        @Html.Raw("if(val.indexOf('Date') > -1) val = (new Date(parseInt(val.substr(6)))).toLocaleString();\n");
-                        @Html.Raw("row += '<td>' + val + '</td>';\n");
+                        if (prop.UIHint == "_Image")
+                        {
+                            @Html.Raw("row += '<td><img src=/admin/Images/Image/' + item." + prop.Name + " + ' width=100 height=100 /></td>';\n");
+                        }
+                        else if(prop.Type == "DateTime")
+                        {
+                            @Html.Raw("row += '<td>' + ((new Date(parseInt(item." + prop.Name + ".substr(6)))).toLocaleString()) + '</td>';\n");
+                        }
+                        else
+                        {
+                            @Html.Raw("row += '<td>' + (item." + prop.Name + " || '') + '</td>';\n");
+                        }
                     }
                         row += "<td align='right'><button class='btn btn-primary edit-item' data-id='" + item.Id + "'>@Resources.Edit</button> <button class='btn btn-primary delete-item' data-id='" + item.Id + "'>@Resources.Delete</button></td>";
                         row += "</tr>";

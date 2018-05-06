@@ -23,6 +23,7 @@ namespace Stolarus2.Data.Models
             modelBuilder.Configurations.Add(new QuoteMap());
             modelBuilder.Configurations.Add(new ContactMap());
             modelBuilder.Configurations.Add(new CertificateMap());
+            modelBuilder.Configurations.Add(new ImageMap());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

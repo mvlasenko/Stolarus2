@@ -32,8 +32,12 @@
             });
         },
 
-        success: function (file) {
-            $("#@name").val(file.name);
+        success: function (file, response) {
+
+            //console.log(file);
+            //console.log(response);
+
+            $("#@name").val(response.id);
         }
 
     };

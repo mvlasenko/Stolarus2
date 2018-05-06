@@ -35,62 +35,62 @@ namespace Stolarus2.T4
 
                 //angular project
 
-                AngularControllerTemplate acTemplate = new AngularControllerTemplate();
-                acTemplate.Model = model;
-                string acContent = acTemplate.TransformText();
-                File.WriteAllText(Path.Combine(clientProjectDir, "Scripts\\modules\\stolarus\\controllers", model.Plural.ToLower() + ".js"), acContent);
+                //AngularControllerTemplate acTemplate = new AngularControllerTemplate();
+                //acTemplate.Model = model;
+                //string acContent = acTemplate.TransformText();
+                //File.WriteAllText(Path.Combine(clientProjectDir, "Scripts\\modules\\stolarus\\controllers", model.Plural.ToLower() + ".js"), acContent);
 
-                AngularItemTemplate aiTemplate = new AngularItemTemplate();
-                aiTemplate.Model = model;
-                string aiContent = aiTemplate.TransformText();
-                File.WriteAllText(Path.Combine(clientProjectDir, "WebPages", model.Singular + "ListItem.html"), aiContent);
+                //AngularItemTemplate aiTemplate = new AngularItemTemplate();
+                //aiTemplate.Model = model;
+                //string aiContent = aiTemplate.TransformText();
+                //File.WriteAllText(Path.Combine(clientProjectDir, "WebPages", model.Singular + "ListItem.html"), aiContent);
 
 
                 //data project
 
-                //ModelTemplate modelTemplate = new ModelTemplate();
-                //modelTemplate.Model = model;
-                //modelTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string modelContent = modelTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(dataProjectDir, "Models", model.Singular + ".cs"), modelContent);
+                ModelTemplate modelTemplate = new ModelTemplate();
+                modelTemplate.Model = model;
+                modelTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string modelContent = modelTemplate.TransformText();
+                File.WriteAllText(Path.Combine(dataProjectDir, "Models", model.Singular + ".cs"), modelContent);
 
-                //MappingTemplate mapTemplate = new MappingTemplate();
-                //mapTemplate.Model = model;
-                //mapTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string mapContent = mapTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(dataProjectDir, "Models\\Mapping", model.Singular + "Map.cs"), mapContent);
+                MappingTemplate mapTemplate = new MappingTemplate();
+                mapTemplate.Model = model;
+                mapTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string mapContent = mapTemplate.TransformText();
+                File.WriteAllText(Path.Combine(dataProjectDir, "Models\\Mapping", model.Singular + "Map.cs"), mapContent);
 
-                //RepositoryTemplate repositoryTemplate = new RepositoryTemplate();
-                //repositoryTemplate.Model = model;
-                //repositoryTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string repositoryContent = repositoryTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(dataProjectDir, "Repository", model.Plural + "Repository.cs"), repositoryContent);
+                RepositoryTemplate repositoryTemplate = new RepositoryTemplate();
+                repositoryTemplate.Model = model;
+                repositoryTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string repositoryContent = repositoryTemplate.TransformText();
+                File.WriteAllText(Path.Combine(dataProjectDir, "Repository", model.Plural + "Repository.cs"), repositoryContent);
 
-                //ContractTemplate contractTemplate = new ContractTemplate();
-                //contractTemplate.Model = model;
-                //contractTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string contractContent = contractTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(dataProjectDir, "Contracts", "I" + model.Plural + "Repository.cs"), contractContent);
+                ContractTemplate contractTemplate = new ContractTemplate();
+                contractTemplate.Model = model;
+                contractTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string contractContent = contractTemplate.TransformText();
+                File.WriteAllText(Path.Combine(dataProjectDir, "Contracts", "I" + model.Plural + "Repository.cs"), contractContent);
 
-                ////web project
+                //web project
 
-                //ModelBinderTemplate modelBinderTemplate = new ModelBinderTemplate();
-                //modelBinderTemplate.Model = model;
-                //modelBinderTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string modelBinderContent = modelBinderTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(webProjectDir, "ModelBinding", model.Plural + "FilterModelBinder.cs"), modelBinderContent);
+                ModelBinderTemplate modelBinderTemplate = new ModelBinderTemplate();
+                modelBinderTemplate.Model = model;
+                modelBinderTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string modelBinderContent = modelBinderTemplate.TransformText();
+                File.WriteAllText(Path.Combine(webProjectDir, "ModelBinding", model.Plural + "FilterModelBinder.cs"), modelBinderContent);
 
-                //ControllerTemplate controllerTemplate = new ControllerTemplate();
-                //controllerTemplate.Model = model;
-                //controllerTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string controllerContent = controllerTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(webProjectDir, "Controllers", model.Plural + "Controller.cs"), controllerContent);
+                ControllerTemplate controllerTemplate = new ControllerTemplate();
+                controllerTemplate.Model = model;
+                controllerTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string controllerContent = controllerTemplate.TransformText();
+                File.WriteAllText(Path.Combine(webProjectDir, "Controllers", model.Plural + "Controller.cs"), controllerContent);
 
-                //EditorTemplate editorTemplate = new EditorTemplate();
-                //editorTemplate.Model = model;
-                //editorTemplate.RootNamespace = databaseInfo.RootNamespace;
-                //string editorContent = editorTemplate.TransformText();
-                //File.WriteAllText(Path.Combine(webProjectDir, "Views\\Shared\\EditorTemplates", "_" + model.Singular + ".cshtml"), editorContent);
+                EditorTemplate editorTemplate = new EditorTemplate();
+                editorTemplate.Model = model;
+                editorTemplate.RootNamespace = databaseInfo.RootNamespace;
+                string editorContent = editorTemplate.TransformText();
+                File.WriteAllText(Path.Combine(webProjectDir, "Views\\Shared\\EditorTemplates", "_" + model.Singular + ".cshtml"), editorContent);
 
                 ////client web project
 
@@ -101,34 +101,34 @@ namespace Stolarus2.T4
                 //File.WriteAllText(Path.Combine(clientProjectDir, "Controllers\\Api", model.Plural + "Controller.cs"), apiControllerContent);
             }
 
-            //ContextTemplate contextTemplate = new ContextTemplate();
-            //contextTemplate.RootNamespace = databaseInfo.RootNamespace;
-            //contextTemplate.Models = databaseInfo.Models;
-            //string contextContent = contextTemplate.TransformText();
-            //File.WriteAllText(Path.Combine(dataProjectDir, "Models", databaseInfo.RootNamespace + "Context.cs"), contextContent);
+            ContextTemplate contextTemplate = new ContextTemplate();
+            contextTemplate.RootNamespace = databaseInfo.RootNamespace;
+            contextTemplate.Models = databaseInfo.Models;
+            string contextContent = contextTemplate.TransformText();
+            File.WriteAllText(Path.Combine(dataProjectDir, "Models", databaseInfo.RootNamespace + "Context.cs"), contextContent);
 
-            //RegisterModelBindersTemplate registerModelBindersTemplate = new RegisterModelBindersTemplate();
-            //registerModelBindersTemplate.Models = databaseInfo.Models;
-            //registerModelBindersTemplate.RootNamespace = databaseInfo.RootNamespace;
-            //string registerModelBindersContent = registerModelBindersTemplate.TransformText();
-            //File.WriteAllText(Path.Combine(webProjectDir, "App_Start", "ModelBindersConfig.cs"), registerModelBindersContent);
+            RegisterModelBindersTemplate registerModelBindersTemplate = new RegisterModelBindersTemplate();
+            registerModelBindersTemplate.Models = databaseInfo.Models;
+            registerModelBindersTemplate.RootNamespace = databaseInfo.RootNamespace;
+            string registerModelBindersContent = registerModelBindersTemplate.TransformText();
+            File.WriteAllText(Path.Combine(webProjectDir, "App_Start", "ModelBindersConfig.cs"), registerModelBindersContent);
 
-            //RegisterUnityTemplate registerUnityTemplate1 = new RegisterUnityTemplate();
-            //registerUnityTemplate1.RootNamespace = databaseInfo.RootNamespace + ".Admin";
-            //registerUnityTemplate1.Models = databaseInfo.Models;
-            //string registerUnityContent1 = registerUnityTemplate1.TransformText();
-            //File.WriteAllText(Path.Combine(webProjectDir, "App_Start", "UnityConfig.custom.cs"), registerUnityContent1);
+            RegisterUnityTemplate registerUnityTemplate1 = new RegisterUnityTemplate();
+            registerUnityTemplate1.RootNamespace = databaseInfo.RootNamespace + ".Admin";
+            registerUnityTemplate1.Models = databaseInfo.Models;
+            string registerUnityContent1 = registerUnityTemplate1.TransformText();
+            File.WriteAllText(Path.Combine(webProjectDir, "App_Start", "UnityConfig.custom.cs"), registerUnityContent1);
 
-            //RegisterUnityTemplate registerUnityTemplate2 = new RegisterUnityTemplate();
-            //registerUnityTemplate2.RootNamespace = databaseInfo.RootNamespace;
-            //registerUnityTemplate2.Models = databaseInfo.Models;
-            //string registerUnityContent2 = registerUnityTemplate2.TransformText();
-            //File.WriteAllText(Path.Combine(clientProjectDir, "App_Start", "UnityConfig.custom.cs"), registerUnityContent2);
+            RegisterUnityTemplate registerUnityTemplate2 = new RegisterUnityTemplate();
+            registerUnityTemplate2.RootNamespace = databaseInfo.RootNamespace;
+            registerUnityTemplate2.Models = databaseInfo.Models;
+            string registerUnityContent2 = registerUnityTemplate2.TransformText();
+            File.WriteAllText(Path.Combine(clientProjectDir, "App_Start", "UnityConfig.custom.cs"), registerUnityContent2);
 
-            //MiscTemplate miscTemplate = new MiscTemplate();
-            //miscTemplate.Models = databaseInfo.Models;
-            //string miscContent = miscTemplate.TransformText();
-            //File.WriteAllText(Path.Combine(webProjectDir, "Misc.txt"), miscContent);
+            MiscTemplate miscTemplate = new MiscTemplate();
+            miscTemplate.Models = databaseInfo.Models;
+            string miscContent = miscTemplate.TransformText();
+            File.WriteAllText(Path.Combine(webProjectDir, "Misc.txt"), miscContent);
 
 
         }

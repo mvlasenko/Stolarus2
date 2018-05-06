@@ -43,6 +43,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -79,6 +80,7 @@
     <Compile Include="Contracts\IDbContextFactory.cs" />
     <Compile Include="Contracts\IEntity.cs" />
     <Compile Include="Contracts\IFilter.cs" />
+    <Compile Include="Contracts\IImagesRepository.cs" />
     <Compile Include="Contracts\IPagedCollection.cs" />
     <Compile Include="Contracts\IPagedCollection`.cs" />
     <Compile Include="Contracts\IPortfolioDetailsRepository.cs" />
@@ -89,14 +91,17 @@
     <Compile Include="Contracts\IQuotesRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\ISlidersRepository.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Filters\Filter.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
     <Compile Include="Models\Mapping\CertificateMap.cs" />
     <Compile Include="Models\Mapping\ContactMap.cs" />
+    <Compile Include="Models\Mapping\ImageMap.cs" />
     <Compile Include="Models\Mapping\PortfolioDetailMap.cs" />
     <Compile Include="Models\Mapping\PortfolioMap.cs" />
     <Compile Include="Models\Mapping\PortfolioTypeMap.cs" />
@@ -122,6 +127,7 @@
     <Compile Include="Repository\CertificatesRepository.cs" />
     <Compile Include="Repository\ContactsRepository.cs" />
     <Compile Include="Repository\DbContextFactory.cs" />
+    <Compile Include="Repository\ImagesRepository.cs" />
     <Compile Include="Repository\PortfolioDetailsRepository.cs" />
     <Compile Include="Repository\PortfoliosRepository.cs" />
     <Compile Include="Repository\PortfolioTypesRepository.cs" />
@@ -140,6 +146,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

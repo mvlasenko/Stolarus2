@@ -12,52 +12,60 @@ namespace Stolarus2.Admin.Helpers
 {
     public static class UIHelper
     {
-
         public static List<Slider> GetSliders()
         {
             ISlidersRepository repository = DependencyResolver.Current.GetService<ISlidersRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<ProductCategory> GetProductCategories()
         {
             IProductCategoriesRepository repository = DependencyResolver.Current.GetService<IProductCategoriesRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Product> GetProducts()
         {
             IProductsRepository repository = DependencyResolver.Current.GetService<IProductsRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<PortfolioType> GetPortfolioTypes()
         {
             IPortfolioTypesRepository repository = DependencyResolver.Current.GetService<IPortfolioTypesRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Portfolio> GetPortfolios()
         {
             IPortfoliosRepository repository = DependencyResolver.Current.GetService<IPortfoliosRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<PortfolioDetail> GetPortfolioDetails()
         {
             IPortfolioDetailsRepository repository = DependencyResolver.Current.GetService<IPortfolioDetailsRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Article> GetArticle()
         {
             IArticleRepository repository = DependencyResolver.Current.GetService<IArticleRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Quote> GetQuotes()
         {
             IQuotesRepository repository = DependencyResolver.Current.GetService<IQuotesRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Contact> GetContacts()
         {
             IContactsRepository repository = DependencyResolver.Current.GetService<IContactsRepository>();
             return repository.GetList().ToList();
         }
+
         public static List<Certificate> GetCertificates()
         {
             ICertificatesRepository repository = DependencyResolver.Current.GetService<ICertificatesRepository>();
