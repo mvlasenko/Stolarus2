@@ -19,7 +19,7 @@ namespace Stolarus2.Controllers
             model.About = articleRepository.GetList().Where(x => x.ArticleCategory == ArticleCategory.About).ToList();
 
             IProductCategoriesRepository productCategoryRepository = DependencyResolver.Current.GetService<IProductCategoriesRepository>();
-            model.ProductCategories = productCategoryRepository.GetList().ToList();
+            model.ProductCategories = productCategoryRepository.GetList().Take(3).ToList();
 
             IPortfoliosRepository portfolioRepository = DependencyResolver.Current.GetService<IPortfoliosRepository>();
             model.Portfolios = portfolioRepository.GetList().Take(5).ToList();

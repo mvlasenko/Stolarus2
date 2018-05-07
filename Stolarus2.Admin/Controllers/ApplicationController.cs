@@ -11,6 +11,7 @@ using Stolarus2.Data.Models.Filters;
 
 namespace Stolarus2.Admin.Controllers
 {
+    [Authorize(Users="admin")]
     public abstract class ApplicationController<T, TKey> : Controller where T : class, IEntity<TKey>, new()
     {
         private readonly IRepository<T, TKey> repository;
@@ -19,7 +20,7 @@ namespace Stolarus2.Admin.Controllers
         {
             this.repository = repository;
         }
-
+        
         [HttpGet]
         public virtual ActionResult Index(IFilter<T, TKey> filter)
         {
@@ -210,8 +211,11 @@ namespace Stolarus2.Admin.Controllers
 
                 byte[] fileData = memStream.ToArray();
 
-                //save file database
-                Data.Models.Image newImage = imagesRepository.Insert(new Data.Models.Image { Binary = fileData, Name = file.FileName, CreatedDateTime = DateTime.Now });
+                //get existing
+                Data.Models.Image newImage = imagesRepository.GetList().FirstOrDefault(x => x.Name == file.FileName && x.Binary.Length == fileData.Length);
+                //get from database
+                if (newImage == null)
+                    newImage = imagesRepository.Insert(new Data.Models.Image { Binary = fileData, Name = file.FileName, CreatedDateTime = DateTime.Now });
 
                 return Json(new
                 {

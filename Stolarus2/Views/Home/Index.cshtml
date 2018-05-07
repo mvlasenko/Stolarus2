@@ -5,6 +5,7 @@
 
 @{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!--========== SLIDER ==========-->
@@ -100,7 +101,9 @@
         <div class="row margin-b-40">
             <div class="col-sm-6">
                 <h2>Latest Products</h2>
-                <p>Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro Products intro </p>
+            </div>
+            <div class="col-sm-6">
+                @Html.ActionLink("All Categories", "Index", "ProductCategories");
             </div>
         </div>
         <!--// end row -->
@@ -116,7 +119,8 @@
                     </div>
                     <h4><a href="#">@cat.Name</a></h4>
                     <p>@cat.Description</p>
-                    <a class="link" href="/@cat.Name">Read More</a>
+                    @Html.ActionLink("Read More", "Index", "Products", new { @class = "link" })
+
                 </div>
                 <!-- End Latest Products -->
             }
@@ -159,9 +163,21 @@
                             <!-- End Work -->
                         </div>
                     }
-                    else
+                    else if (index == 1)
                     {
                         <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-30">
+                            <!-- Work -->
+                            <div class="work work-popup-trigger">
+                                <div class="work-overlay">
+                                    <img class="full-width img-responsive" src="@por.ImageID.GetPath(397, 415)" alt="@por.Name">
+                                </div>
+                            </div>
+                            <!-- End Work -->
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-30">
                             <!-- Work -->
                             <div class="work work-popup-trigger">
                                 <div class="work-overlay">
