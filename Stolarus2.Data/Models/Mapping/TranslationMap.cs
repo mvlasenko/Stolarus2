@@ -11,11 +11,13 @@ namespace Stolarus2.Data.Models.Mapping
 
             // Properties
 
-            this.Property(t => t.Code).IsRequired().HasMaxLength(255);
+            this.Property(t => t.Code).IsRequired().HasMaxLength(10);
 
             this.Property(t => t.Table).IsRequired();
 
             this.Property(t => t.Field).IsRequired();
+
+            this.Property(t => t.EntityID).IsRequired();
 
             this.Property(t => t.Text).HasMaxLength(4000);
 
@@ -26,6 +28,7 @@ namespace Stolarus2.Data.Models.Mapping
             this.Property(t => t.Code).HasColumnName("Code");
             this.Property(t => t.Table).HasColumnName("Table");
             this.Property(t => t.Field).HasColumnName("Field");
+            this.Property(t => t.EntityID).HasColumnName("EntityID");
             this.Property(t => t.Text).HasColumnName("Text");
 
             // Relationships

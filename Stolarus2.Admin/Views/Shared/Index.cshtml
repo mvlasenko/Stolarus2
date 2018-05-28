@@ -75,7 +75,7 @@
 
                 AddAsterisk();
 
-                InitOriginalText();
+                InitEntityList();
             });
         });
 
@@ -89,7 +89,7 @@
 
                 AddAsterisk();
 
-                InitOriginalText();
+                InitEntityList();
             });
         });
 
@@ -212,24 +212,27 @@
         RefreshGrid(currentPageIndex);
     }
 
-    function InitOriginalText() {
+    function InitEntityList() {
 
         $('#Table').change(function () {
-            ShowOriginalText();
+            ShowEntityList();
         });
 
         $('#Field').change(function () {
-            ShowOriginalText();
+            ShowEntityList();
         });
     }
 
-    function ShowOriginalText() {
-        var url = "@Url.Content("~/")@controller/GetOriginalText";
+    function ShowEntityList() {
+        var url = "@Url.Content("~/")@controller/GetEntityList";
         var table = $('#Table').val();
         var field = $('#Field').val();
 
         $.get(url + '?table=' + table + "&field=" + field, function (data) {
-            $('#translation-original').html(data);
+
+            //todo: fill ddl
+
+            //$('#translation-original').html(data);
         });
     }
 

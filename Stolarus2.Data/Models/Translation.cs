@@ -21,6 +21,10 @@ namespace Stolarus2.Data.Models
         [UIHint("_Enum")]
         public Field Field { get; set; }
 
+        [IncludeList()]
+        public int EntityID { get; set; }
+
+        [IncludeList()]
         [UIHint("MultilineText")]
         public string Text { get; set; }
     }
