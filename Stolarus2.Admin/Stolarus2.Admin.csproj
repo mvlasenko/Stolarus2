@@ -412,6 +412,8 @@
     <Content Include="Views\Shared\EditorTemplates\_Enum.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_Language.cshtml" />
+    <Content Include="Views\Translations\_CreatePartial.cshtml" />
+    <Content Include="Views\Translations\_EditPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stolarus2.Data\Stolarus2.Data.csproj">

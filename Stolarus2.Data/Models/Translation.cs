@@ -14,12 +14,14 @@ namespace Stolarus2.Data.Models
         public string Code { get; set; }
 
         [IncludeList()]
-        public string Table { get; set; }
+        [UIHint("_Enum")]
+        public Table Table { get; set; }
 
         [IncludeList()]
-        public string Field { get; set; }
+        [UIHint("_Enum")]
+        public Field Field { get; set; }
 
-        [IncludeList()]
+        [UIHint("MultilineText")]
         public string Text { get; set; }
     }
 }

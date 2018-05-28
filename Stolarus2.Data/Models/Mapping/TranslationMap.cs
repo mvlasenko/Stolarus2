@@ -13,9 +13,9 @@ namespace Stolarus2.Data.Models.Mapping
 
             this.Property(t => t.Code).IsRequired().HasMaxLength(255);
 
-            this.Property(t => t.Table).IsRequired().HasMaxLength(255);
+            this.Property(t => t.Table).IsRequired();
 
-            this.Property(t => t.Field).IsRequired().HasMaxLength(255);
+            this.Property(t => t.Field).IsRequired();
 
             this.Property(t => t.Text).HasMaxLength(4000);
 

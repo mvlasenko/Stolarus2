@@ -94,10 +94,12 @@
     <Compile Include="Contracts\ISlidersRepository.cs" />
     <Compile Include="Contracts\ITranslationsRepository.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Filters\Filter.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Language.cs" />
@@ -157,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\migration.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

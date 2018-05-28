@@ -1,9 +1,8 @@
 ﻿@using Stolarus2.Data.Properties
-@using Stolarus2.Data.Models
 
 @{
 
-    var values = Enum.GetValues(typeof(ArticleCategory)).Cast<object>()
+    var values = Enum.GetValues(ViewData.ModelMetadata.ModelType).Cast<object>()
                      .Select(v => new SelectListItem
                      {
                          Selected = v.Equals(Model),

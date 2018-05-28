@@ -1,0 +1,2 @@
+﻿Update-Database -ProjectName Stolarus2.Data -StartupProjectName Stolarus2.Admin -Force -Verbose
+Enable-Migrations -EnableAutomaticMigrations -ProjectName Stolarus2.Data -StartupProjectName Stolarus2.Admin

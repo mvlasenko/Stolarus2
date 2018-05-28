@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Script.Serialization;
-using System.Xml.Serialization;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
 
@@ -15,6 +11,7 @@ namespace Stolarus2.Data.Models
 
         [IncludeList("Image")]
         [Display(Name = "Image")]
+        [UIHint("_Image")]
         public string ImageID { get; set; }
 
         [IncludeList()]
@@ -25,6 +22,5 @@ namespace Stolarus2.Data.Models
 
         [IncludeList()]
         public bool Default { get; set; }
-
     }
 }
