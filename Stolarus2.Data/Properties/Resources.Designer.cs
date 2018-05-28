@@ -232,6 +232,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Languages.
+        /// </summary>
+        public static string Languages {
+            get {
+                return ResourceManager.GetString("Languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Portfolio Details.
         /// </summary>
         public static string PortfolioDetails {
@@ -331,6 +340,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Language.
+        /// </summary>
+        public static string SelectLanguage {
+            get {
+                return ResourceManager.GetString("SelectLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Portfolio.
         /// </summary>
         public static string SelectPortfolio {
@@ -403,11 +421,29 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Translation.
+        /// </summary>
+        public static string SelectTranslation {
+            get {
+                return ResourceManager.GetString("SelectTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sliders.
         /// </summary>
         public static string Sliders {
             get {
                 return ResourceManager.GetString("Sliders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Translations.
+        /// </summary>
+        public static string Translations {
+            get {
+                return ResourceManager.GetString("Translations", resourceCulture);
             }
         }
     }

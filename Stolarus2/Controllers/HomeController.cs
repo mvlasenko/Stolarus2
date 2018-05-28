@@ -8,7 +8,7 @@ namespace Stolarus2.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string lang)
         {
             SinglePage model = new SinglePage();
 

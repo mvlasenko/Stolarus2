@@ -21,6 +21,8 @@ namespace Stolarus2.Admin
             binders[typeof(IFilter<Contact, int>)] = new ContactsFilterModelBinder();
             binders[typeof(IFilter<Certificate, int>)] = new CertificatesFilterModelBinder();
             binders[typeof(IFilter<Image, Guid>)] = new ImagesFilterModelBinder();
+            binders[typeof(IFilter<Language, int>)] = new LanguagesFilterModelBinder();
+            binders[typeof(IFilter<Translation, int>)] = new TranslationsFilterModelBinder();
         }
     }
 }

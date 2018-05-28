@@ -72,6 +72,18 @@ namespace Stolarus2.Admin.Helpers
             return repository.GetList().ToList();
         }
 
+        public static List<Language> GetLanguages()
+        {
+            ILanguagesRepository repository = DependencyResolver.Current.GetService<ILanguagesRepository>();
+            return repository.GetList().ToList();
+        }
+
+        public static List<Translation> GetTranslations()
+        {
+            ITranslationsRepository repository = DependencyResolver.Current.GetService<ITranslationsRepository>();
+            return repository.GetList().ToList();
+        }
+
         public static MvcHtmlString Cut(this MvcHtmlString str, int maxLength)
         {
             return new MvcHtmlString(str.ToString().Cut(maxLength));

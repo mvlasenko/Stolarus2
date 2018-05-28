@@ -234,4 +234,16 @@
   <data name="SelectTimeZone" xml:space="preserve">
     <value>Select Time Zone</value>
   </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="SelectTranslation" xml:space="preserve">
+    <value>Select Translation</value>
+  </data>
+  <data name="Translations" xml:space="preserve">
+    <value>Translations</value>
+  </data>
 </root>

@@ -1,0 +1,4 @@
+@using Stolarus2.Admin.Helpers
+@using Stolarus2.Data.Properties
+
+@Html.DropDownList("", new SelectList(UIHelper.GetLanguages(), "Code", "Name", ViewData.TemplateInfo.FormattedModelValue.ToString()), string.Format("< {0} >", Resources.SelectLanguage), new { @class = "form-control" })

@@ -22,7 +22,8 @@ namespace Stolarus2
             container.RegisterType<IContactsRepository, ContactsRepository>();
             container.RegisterType<ICertificatesRepository, CertificatesRepository>();
             container.RegisterType<IImagesRepository, ImagesRepository>();
-
+            container.RegisterType<ILanguagesRepository, LanguagesRepository>();
+            container.RegisterType<ITranslationsRepository, TranslationsRepository>();
         }
     }
 }
