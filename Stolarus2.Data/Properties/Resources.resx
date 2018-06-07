@@ -246,4 +246,7 @@
   <data name="Translations" xml:space="preserve">
     <value>Translations</value>
   </data>
+  <data name="SelectItem" xml:space="preserve">
+    <value>Select Item</value>
+  </data>
 </root>

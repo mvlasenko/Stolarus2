@@ -75,7 +75,13 @@
 
                 AddAsterisk();
 
+                //translation -specific
                 InitEntityList();
+                ShowEntityList();
+                $('#Code').prop("disabled", true);
+                $('#Table').prop("disabled", true);
+                $('#Field').prop("disabled", true);
+                $('#EntityID').prop("disabled", true);
             });
         });
 
@@ -89,6 +95,7 @@
 
                 AddAsterisk();
 
+                //translation -specific
                 InitEntityList();
             });
         });
@@ -214,25 +221,71 @@
 
     function InitEntityList() {
 
+        $('#Code').unbind();
+        $('#Code').change(function () {
+            ShowEntityList();
+        });
+
+        $('#Table').unbind();
         $('#Table').change(function () {
             ShowEntityList();
         });
 
+        $('#Field').unbind();
         $('#Field').change(function () {
             ShowEntityList();
         });
     }
 
     function ShowEntityList() {
-        var url = "@Url.Content("~/")@controller/GetEntityList";
+
         var table = $('#Table').val();
         var field = $('#Field').val();
 
-        $.get(url + '?table=' + table + "&field=" + field, function (data) {
+        if (table && field) {
 
-            //todo: fill ddl
+            var url = "@Url.Content("~/")@controller/GetEntityList";
 
-            //$('#translation-original').html(data);
+            $('#EntityID').unbind();
+            $('#EntityID').empty();
+            $('#EntityID').append($("<option />").val("").text('< @Resources.SelectItem >'));
+
+            $.get(url + '?table=' + table + "&field=" + field, function (data) {
+                $.each(data, function () {
+                    $('#EntityID').append($("<option />").val(this.Id).text(this.Name));
+                });
+                ShowOriginal();
+            });
+
+            $('#EntityID').change(function () {
+                ShowOriginal();
+            });
+        }
+    }
+
+    function ShowOriginal() {
+        
+        var url = "";
+
+        if ($('#Id').val()) {
+            url = "@Url.Content("~/")@controller/GetTranslationById" + '?id=' + $('#Id').val();
+        }
+        else {
+            var table = $('#Table').val();
+            var field = $('#Field').val();
+            var entityId = $('#EntityID').val();
+            url = "@Url.Content("~/")@controller/GetTranslation" + '?table=' + table + "&field=" + field + "&entityId=" + entityId;
+        }
+        
+        $.get(url, function (item) {
+            if (item) {
+                $('#EntityID').val(item.EntityID);
+                $('#Original').html(item.Original);
+                $('#Text').html(item.Text);
+            }
+            else {
+                $('#Original').empty();
+            }
         });
     }
 

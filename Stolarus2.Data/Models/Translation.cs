@@ -1,4 +1,6 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Stolarus2.Admin.Attributes;
 using Stolarus2.Data.Contracts;
 
@@ -22,10 +24,17 @@ namespace Stolarus2.Data.Models
         public Field Field { get; set; }
 
         [IncludeList()]
+        [Display(Name = "Entity")]
+        [UIHint("_EmptyDdl")]
         public int EntityID { get; set; }
 
         [IncludeList()]
         [UIHint("MultilineText")]
         public string Text { get; set; }
+
+        [NotMapped]
+        [ReadOnly(true)]
+        [UIHint("MultilineText")]
+        public string Original { get; set; }
     }
 }

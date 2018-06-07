@@ -340,6 +340,15 @@ namespace Stolarus2.Data.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Item.
+        /// </summary>
+        public static string SelectItem {
+            get {
+                return ResourceManager.GetString("SelectItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Language.
         /// </summary>
         public static string SelectLanguage {

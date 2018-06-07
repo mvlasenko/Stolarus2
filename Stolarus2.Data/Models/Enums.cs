@@ -18,8 +18,7 @@
     public enum Field
     {
         Name,
-        Description,
-        ShortDescription
+        Description
     }
 
 }

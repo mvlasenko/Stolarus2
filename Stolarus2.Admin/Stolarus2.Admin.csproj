@@ -414,6 +414,7 @@
     <Content Include="Views\Shared\EditorTemplates\_Language.cshtml" />
     <Content Include="Views\Translations\_CreatePartial.cshtml" />
     <Content Include="Views\Translations\_EditPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_EmptyDdl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stolarus2.Data\Stolarus2.Data.csproj">
