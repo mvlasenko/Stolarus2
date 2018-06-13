@@ -9,6 +9,7 @@ namespace Stolarus2.Admin.Models
 
         [Required]
         [DataType(DataType.Password)]
+		[UIHint("Password")]
         public string Password { get; set; }
     }
 }
