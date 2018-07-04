@@ -64,6 +64,8 @@
 <script type="text/javascript">
 
     function InitModal() {
+
+        $('.edit-item').unbind();
         $('.edit-item').click(function() {
             var url = "@Url.Content("~/")@controller/UpdatePartial";
             var id = $(this).attr('data-id');
@@ -85,6 +87,7 @@
             });
         });
 
+        $('.create-item').unbind();
         $('.create-item').click(function() {
             var url = "@Url.Content("~/")@controller/CreatePartial";
             $.get(url, function(data) {
@@ -100,6 +103,7 @@
             });
         });
 
+        $('.delete-item').unbind();
         $('.delete-item').click(function () {
 
             if (confirm('@Resources.DeleteConfirm'))
